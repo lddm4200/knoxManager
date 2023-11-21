@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/trangChu"
+    android:icon="@drawable/trangchu"
+    android:title="Trang chủ"/>
+    <item
+        android:id="@+id/phieu"
+        android:icon="@drawable/phieu"
+        android:title="phiếu"/>
+    <item
+        android:id="@+id/hang"
+        android:icon="@drawable/hang"
+        android:title="Hàng"/>
+    <item
+        android:id="@+id/nhaSx"
+        android:icon="@drawable/nhasx"
+        android:title="hãng"/>
+    <item
+        android:id="@+id/them"
+        android:icon="@drawable/them"
+        android:title="Menu"/>
+</menu>
