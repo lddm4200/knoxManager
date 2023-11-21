@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.knoxmanager.R;
@@ -38,7 +39,7 @@ public class frmNhasx extends Fragment {
     FloatingActionButton fab;
     Dialog dialog;
     EditText edMahang, edTenhang;
-    Button btnSave, btnCancel;
+    TextView btnSave, btnCancel;
     public frmNhasx() {
         // Required empty public constructor
     }
