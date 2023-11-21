@@ -4,15 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".logIn"
-    android:orientation="vertical">
-<ImageView
-    android:layout_marginTop="30px"
-    android:layout_width="350px"
-    android:layout_height="150px"
-    android:src="@drawable/img"
-android:layout_gravity="center"
-    />
+    tools:context=".sigIn"
+    android:orientation="vertical"
+    >
+    <ImageView
+        android:id="@+id/backSigin"
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:src="@drawable/back"
+        android:layout_margin="20px"
+        android:padding="8sp"
+        android:background="@drawable/butum"
+        />
+    <ImageView
+        android:layout_marginTop="30px"
+        android:layout_width="350px"
+        android:layout_height="150px"
+        android:src="@drawable/img"
+        android:layout_gravity="center"
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,12 +43,6 @@ android:layout_gravity="center"
     <ImageView
         android:id="@+id/vit"
         android:layout_gravity="center"
-        android:layout_width="300px"
-        android:layout_height="300px"
-        android:src="@drawable/img_1"/>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="10px"
         android:layout_width="200px"
         android:layout_height="200px"
         android:src="@drawable/img_1"/>
@@ -51,7 +55,7 @@ android:layout_gravity="center"
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/edtTkDangNhap"
+            android:id="@+id/edtTkDangKy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Tài khoản" />
@@ -61,7 +65,7 @@ android:layout_gravity="center"
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         app:hintEnabled="true"
@@ -69,20 +73,32 @@ android:layout_gravity="center"
         >
 
         <EditText
-            android:id="@+id/edtMkDangNhap"
+            android:id="@+id/edtMkDk"
             android:layout_width="match_parent"
             android:inputType="textPassword"
             android:layout_height="wrap_content"
             android:hint="Mật khẩu" />
 
     </com.google.android.material.textfield.TextInputLayout>
-    <CheckBox
-        android:layout_margin="10px"
-        android:id="@+id/avtivity_login_CKB"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nhớ mật khẩu ?"
-        />
+        android:layout_marginTop="30dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:hintEnabled="true"
+        app:passwordToggleEnabled="true">
+        >
+
+        <EditText
+            android:id="@+id/edtReMkDk"
+            android:layout_width="match_parent"
+            android:inputType="textPassword"
+            android:layout_height="wrap_content"
+            android:hint="Nhập lại Mật khẩu" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <TextView
         android:layout_gravity="center"
         android:gravity="center"
@@ -91,19 +107,10 @@ android:layout_gravity="center"
         android:textSize="18dp"
         android:background="@drawable/butum"
         android:layout_marginTop="20dp"
-
         android:layout_width="500px"
         android:layout_height="90px"
-        android:text="Đăng Nhập"
-        android:id="@+id/btnDnLogin"
+        android:text="Đăng Ký"
+        android:id="@+id/btnDksigin"
         />
-    <TextView
-        android:id="@+id/btnDKlogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bạn chưa có tài khoản ư?"
-        android:layout_marginTop="25px"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        />
+
 </LinearLayout>
