@@ -5,9 +5,11 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".frm.frmNhasx"
-    android:padding="10px">
+    android:padding="10px"
+    android:background="@drawable/bg">
 
     <ListView
+
         android:id="@+id/Fragment_hangx_RecycelView"
         android:layout_width="match_parent"
         android:layout_height="700dp"
