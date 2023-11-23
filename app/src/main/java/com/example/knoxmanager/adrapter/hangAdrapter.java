@@ -45,8 +45,8 @@ public class hangAdrapter  extends ArrayAdapter<hang> {
         }
         final hang item = list.get(position);
         if (item != null) {
-            hangxDao hangxDao = new hangxDao(context);
-            hangx hangx = hangxDao.getID(String.valueOf(item.getMaNhaSx()));
+            hangxDao hangxDao1 = new hangxDao(context);
+            hangx hangx1 = hangxDao1.getID(String.valueOf(item.getMaNhaSx()));
             tvMaHang = v.findViewById(R.id.txtHang);
             tvMaHang.setText("Mã Hàng: " + item.getMaHang());
 
@@ -54,7 +54,7 @@ public class hangAdrapter  extends ArrayAdapter<hang> {
             tvTenHang.setText("Tên hang: " + item.getTenSp());
 
             tvNhaSx = v.findViewById(R.id.txtNhaSx);
-            tvNhaSx.setText("Hãng: " + hangx.getMaNhaSx());
+            tvNhaSx.setText("Hãng: " + hangx1.getMaNhaSx());
 
             tvGia = v.findViewById(R.id.txtGia);
             tvGia.setText("giá: "+item.getGia());

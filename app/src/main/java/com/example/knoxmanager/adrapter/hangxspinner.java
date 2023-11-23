@@ -54,7 +54,7 @@ public class hangxspinner extends ArrayAdapter<hangx> {
         final hangx item = list.get(position);
         if (item != null) {
 
-            tvTenhangx = v.findViewById(R.id.txtTenHangX);
+            tvTenhangx = v.findViewById(R.id.txt_tenhangxsp);
             tvTenhangx.setText(item.getTenNhasx());
         }
         return v;

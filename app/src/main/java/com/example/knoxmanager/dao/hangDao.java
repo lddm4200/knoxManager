@@ -21,7 +21,7 @@ public class hangDao {
     public long insert(hang obj) {
         ContentValues values = new ContentValues();
         values.put("tenSp", obj.getTenSp());
-        values.put("maNhaSx", obj.getMaHang());
+        values.put("maNhaSx", obj.getMaNhaSx());
         values.put("gia", obj.getGia());
         return db.insert("hang", null, values);
     }
@@ -29,7 +29,7 @@ public class hangDao {
     public long update(hang obj) {
         ContentValues values = new ContentValues();
         values.put("tenSp", obj.getTenSp());
-        values.put("maNhaSx", obj.getMaHang());
+        values.put("maNhaSx", obj.getMaNhaSx());
         values.put("gia", obj.getGia());
         return db.update("hang", values, "maHang = ?", new String[]{String.valueOf(obj.getMaHang())});
     }
@@ -40,7 +40,8 @@ public class hangDao {
 
     public List<hang> getAll() {
         String sql = "SELECT * FROM hang";
-        return getData(sql);
+        List<hang> list = getData(sql);
+        return list;
     }
 
     public hang getID(String id) {

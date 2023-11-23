@@ -40,7 +40,7 @@ public class frmhang extends Fragment {
     hangDao sachDAO;
     hangAdrapter adapter;
     hang item;
-    List<hang> list;
+    ArrayList<hang> list = new ArrayList<>();
 
 
     FloatingActionButton fab;
@@ -50,7 +50,7 @@ public class frmhang extends Fragment {
     TextView btnSave;
 
     hangxspinner spinnerAdapter;
-    ArrayList<hangx> listHangx;
+    ArrayList<hangx> listHangx = new ArrayList<>();
     hangxDao loaiSachDAO;
     hangx hangx;
     int maNhaSx, position;
@@ -71,27 +71,27 @@ public class frmhang extends Fragment {
 
         sachDAO = new hangDao(getActivity());
         capNhatLv();
-        fab = v.findViewById(R.id.addHang);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openDialog(getActivity(), 0);
-            }
-        });
-        lvSach.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                item = list.get(position);
-                openDialog(getActivity(), 1);
-                return false;
-            }
-        });
+//        fab = v.findViewById(R.id.addHang);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                openDialog(getActivity(), 0);
+//            }
+//        });
+//        lvSach.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+//            @Override
+//            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+//                item = list.get(position);
+//                openDialog(getActivity(), 1);
+//                return false;
+//            }
+//        });
         return v;
     }
 
     void capNhatLv() {
         list = (ArrayList<hang>) sachDAO.getAll();
-        adapter = new hangAdrapter(getActivity(), this, list);
+        adapter = new hangAdrapter(getContext(), this, list);
         lvSach.setAdapter(adapter);
     }
 
