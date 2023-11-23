@@ -31,6 +31,12 @@ public class DbHelper extends SQLiteOpenHelper {
 
 //        String tb_phieuTheoDoi = "create table phieuTheoDoi(maPhieu INTEGER PRIMARY KEY AUTOINCREMENT,TAIKHOAN TEXT REFERENCES NGUOIDUNG(TAIKHOAN),maKhachHang INTEGER)";
 //        db.execSQL(tb_phieuTheoDoi);
+
+        // them bang
+
+        db.execSQL("INSERT INTO nhaSx VALUES(1,'evisu'),(2,'gucci'),(3,'Nike'),(4,'Adidas'),(5,'Docle'),(6,'Roway'),(7,'Teelab'),(8,'PoloGraph'),(9,'Internity'),(10,'Outerity')");
+//        db.execSQL("INSERT INTO hang VALUES(1,'ao',1,'222')");
+
     }
 
     @Override

@@ -68,24 +68,27 @@ public class frmhang extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_hang, container, false);
         lvSach = v.findViewById(R.id.lvHang);
-
         sachDAO = new hangDao(getActivity());
-        capNhatLv();
-//        fab = v.findViewById(R.id.addHang);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                openDialog(getActivity(), 0);
-//            }
-//        });
-//        lvSach.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-//            @Override
-//            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-//                item = list.get(position);
-//                openDialog(getActivity(), 1);
-//                return false;
-//            }
-//        });
+
+//        capNhatLv();
+        fab = v.findViewById(R.id.addHang);
+        list = (ArrayList<hang>) sachDAO.getAll();
+        adapter = new hangAdrapter(getContext(), this, list);
+        lvSach.setAdapter(adapter);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog(getActivity(), 0);
+            }
+        });
+        lvSach.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                item = list.get(position);
+                openDialog(getActivity(), 1);
+                return false;
+            }
+        });
         return v;
     }
 

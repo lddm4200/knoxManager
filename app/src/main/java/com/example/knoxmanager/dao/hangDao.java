@@ -54,14 +54,16 @@ public class hangDao {
     private List<hang> getData(String sql, String... selectionArgs) {
         List<hang> list = new ArrayList<>();
         Cursor cursor = db.rawQuery(sql, selectionArgs);
-        while (cursor.moveToNext()) {
-            hang obj = new hang();
-            obj.setMaHang(Integer.parseInt(cursor.getString(cursor.getColumnIndex("maHang"))));
-            obj.setTenSp(cursor.getString(cursor.getColumnIndex("tenSp")));
-            obj.setMaNhaSx(Integer.parseInt(cursor.getString(cursor.getColumnIndex("maNhaSx"))));
-            obj.setGia(cursor.getString(cursor.getColumnIndex("gia")));
+        if (cursor.getCount() != 0){
+            while (cursor.moveToNext()) {
+                hang obj = new hang();
+                obj.setMaHang(Integer.parseInt(cursor.getString(cursor.getColumnIndex("maHang"))));
+                obj.setTenSp(cursor.getString(cursor.getColumnIndex("tenSp")));
+                obj.setMaNhaSx(Integer.parseInt(cursor.getString(cursor.getColumnIndex("maNhaSx"))));
+                obj.setGia(cursor.getString(cursor.getColumnIndex("gia")));
 
-            list.add(obj);
+                list.add(obj);
+            }
         }
         return list;
     }
