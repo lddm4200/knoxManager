@@ -21,7 +21,7 @@ import java.util.List;
 public class hangxadrapter extends ArrayAdapter<hangx> {
     private Context context;
     frmNhasx fragment;
-    TextView tvMaLoai, tvTenLoai;
+    TextView tvMaNhaSx, tvTenNhaSx;
     ImageView imgDel;
     private List<hangx> list = new ArrayList<>();
 
@@ -41,10 +41,10 @@ public class hangxadrapter extends ArrayAdapter<hangx> {
         }
         final hangx item = list.get(position);
         if (item != null) {
-            tvMaLoai = v.findViewById(R.id.txtMaHangX);
-            tvMaLoai.setText("Mã Hãng: " + item.getMaNhaSx());
-            tvTenLoai = v.findViewById(R.id.txtTenHangX);
-            tvTenLoai.setText("Tên Hãng: " + item.getTenNhasx());
+            tvMaNhaSx = v.findViewById(R.id.txtMaHangX);
+            tvMaNhaSx.setText("Mã Hãng: " + item.getMaNhaSx());
+            tvTenNhaSx = v.findViewById(R.id.txtTenHangX);
+            tvTenNhaSx.setText("Tên Hãng: " + item.getTenNhasx());
 
             imgDel = v.findViewById(R.id.deleteHangx);
         }

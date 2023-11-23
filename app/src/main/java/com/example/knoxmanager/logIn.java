@@ -52,7 +52,7 @@ private TextView button;
         });
 
         try {
-            GifDrawable gifDrawable = new GifDrawable(getResources(), R.drawable.img);
+            GifDrawable gifDrawable = new GifDrawable(getResources(), R.drawable.vit);
             vit.setImageDrawable(gifDrawable);
         } catch (IOException e) {
             e.printStackTrace();

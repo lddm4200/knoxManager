@@ -4,45 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".logIn"
-    android:orientation="vertical">
-<ImageView
-    android:layout_marginTop="30px"
-    android:layout_width="350px"
-    android:layout_height="150px"
-    android:src="@drawable/img"
-android:layout_gravity="center"
-    />
+    android:background="@drawable/nen"
+    android:orientation="vertical"
+    tools:context=".logIn">
+
+    <ImageView
+        android:layout_width="350px"
+        android:layout_height="150px"
+        android:layout_gravity="center"
+        android:layout_marginTop="30px"
+        android:src="@drawable/img" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:fontFamily="monospace"
         android:text="Knox Manager"
         android:textSize="70px"
-        android:textStyle="bold"
-        android:fontFamily="monospace"
-        />
+        android:textStyle="bold" />
+
     <TextView
-        android:layout_marginTop="10px"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="10px"
         android:text="Ứng dụng quản lý tiện ích"
-        android:textSize="45px"
-        />
+        android:textSize="45px" />
+
     <ImageView
         android:id="@+id/vit"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_width="300px"
-        android:layout_height="300px"
-        android:src="@drawable/img_1"/>
+        android:src="@drawable/vit" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="50px"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50px"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_height="wrap_content">
+        android:paddingRight="10dp">
 
         <EditText
             android:id="@+id/edtTkDangNhap"
@@ -65,38 +67,38 @@ android:layout_gravity="center"
         <EditText
             android:id="@+id/edtMkDangNhap"
             android:layout_width="match_parent"
-            android:inputType="textPassword"
             android:layout_height="wrap_content"
-            android:hint="Mật khẩu" />
+            android:hint="Mật khẩu"
+            android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <CheckBox
-        android:layout_margin="10px"
         android:id="@+id/avtivity_login_CKB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nhớ mật khẩu ?"
-        />
+        android:layout_margin="10px"
+        android:text="Nhớ mật khẩu ?" />
+
     <TextView
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="18dp"
-        android:background="@drawable/butum"
-        android:layout_marginTop="20dp"
+        android:id="@+id/btnDnLogin"
         android:layout_width="500px"
         android:layout_height="90px"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/butum"
+        android:gravity="center"
         android:text="Đăng Nhập"
-        android:id="@+id/btnDnLogin"
-        />
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/btnDKlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bạn chưa có tài khoản ư?"
-        android:layout_marginTop="25px"
         android:layout_gravity="center"
-        android:textStyle="bold"
-        />
+        android:layout_marginTop="25px"
+        android:text="Bạn chưa có tài khoản ư?"
+        android:textStyle="bold" />
 </LinearLayout>

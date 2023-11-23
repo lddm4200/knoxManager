@@ -45,9 +45,10 @@
         android:layout_gravity="center"
         android:layout_width="200px"
         android:layout_height="200px"
-        android:src="@drawable/img_1"/>
+        android:src="@drawable/vit"/>
 
     <com.google.android.material.textfield.TextInputLayout
+
         android:layout_marginTop="50px"
         android:layout_width="match_parent"
         android:paddingLeft="10dp"
