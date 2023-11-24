@@ -7,11 +7,67 @@
     android:orientation="vertical"
     android:background="@drawable/bg">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:layout_marginTop="80dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/img"
+        android:layout_gravity="center"
+        />
+<androidx.viewpager.widget.ViewPager
+    android:layout_margin="20dp"
+    android:id="@+id/ViewPager"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"/>
+    <me.relex.circleindicator.CircleIndicator
+        android:id="@+id/CircleIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        />
+
+    <ImageView
         android:layout_width="match_parent"
-        android:id="@+id/txtTen"
-        android:layout_height="match_parent"
-        android:text="ten:" />
+        android:layout_height="80dp"
+        android:background="@drawable/butum"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/butum"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/butum"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/butum"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/butum"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/butum"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        />
 
 </LinearLayout>
