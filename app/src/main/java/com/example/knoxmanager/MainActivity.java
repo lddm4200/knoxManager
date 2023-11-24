@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ImageView imgAnh = findViewById(R.id.imgTrang);
         Handler handler=new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -24,5 +25,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,logIn.class));
             }
         },3000);
+        try {
+            GifDrawable gifDrawable = new GifDrawable(getResources(), R.drawable.xog);
+            imgAnh.setImageDrawable(gifDrawable);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 }

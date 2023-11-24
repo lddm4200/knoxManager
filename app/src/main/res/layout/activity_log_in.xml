@@ -5,71 +5,88 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/nen"
+    android:gravity="center|top"
     android:orientation="vertical"
     tools:context=".logIn">
 
     <ImageView
-        android:layout_width="350px"
-        android:layout_height="150px"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30px"
+        android:layout_marginTop="30dp"
         android:src="@drawable/img" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:fontFamily="monospace"
-        android:text="Knox Manager"
-        android:textSize="70px"
+        android:fontFamily="@font/itim"
+        android:text="KNOX MANAGER"
+        android:textColor="@color/black"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10px"
+        android:fontFamily="@font/istok_web"
         android:text="Ứng dụng quản lý tiện ích"
-        android:textSize="45px" />
+        android:textColor="#0A223E"
+        android:textSize="15sp"
+        android:textStyle="italic" />
 
     <ImageView
         android:id="@+id/vit"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:src="@drawable/vit" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/istok_web"
+        android:text="Tài khoản:"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="italic" />
+
+    <EditText
+        android:id="@+id/edtTkDangNhap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/butum"
+        android:inputType="text"
+        android:padding="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/istok_web"
+        android:text="Mật khẩu:"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="italic" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50px"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-
-        <EditText
-            android:id="@+id/edtTkDangNhap"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tài khoản" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         app:hintEnabled="true"
         app:passwordToggleEnabled="true">
-        >
 
         <EditText
             android:id="@+id/edtMkDangNhap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Mật khẩu"
-            android:inputType="textPassword" />
+            android:background="@drawable/butum"
+            android:inputType="textPassword"
+            android:padding="10dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,28 +94,27 @@
         android:id="@+id/avtivity_login_CKB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10px"
-        android:text="Nhớ mật khẩu ?" />
+        android:layout_gravity="left"
+        android:layout_margin="10dp"
+        android:text="Remember account"
+        android:textStyle="italic" />
 
-    <TextView
+    <Button
         android:id="@+id/btnDnLogin"
-        android:layout_width="500px"
-        android:layout_height="90px"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/butum"
-        android:gravity="center"
-        android:text="Đăng Nhập"
-        android:textColor="@color/black"
-        android:textSize="18dp"
-        android:textStyle="bold" />
+        android:text="Đăng nhập"
+        android:textAllCaps="false" />
+
 
     <TextView
         android:id="@+id/btnDKlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="25px"
+        android:layout_marginTop="20dp"
         android:text="Bạn chưa có tài khoản ư?"
-        android:textStyle="bold" />
+        android:textColor="@color/black"
+        android:textStyle="bold|italic" />
 </LinearLayout>

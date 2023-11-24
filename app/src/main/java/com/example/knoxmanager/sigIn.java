@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,7 +20,7 @@ import pl.droidsonroids.gif.GifDrawable;
 
 public class sigIn extends AppCompatActivity {
     private ImageView vit;
-    private ImageView back;
+    private ImageButton back;
 
     private NguoiDungDao nguoiDungDao;
     private NguoiDung nguoiDung;
@@ -27,7 +29,7 @@ public class sigIn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sig_in);
         vit=findViewById(R.id.vit);
-        back=findViewById(R.id.backSigin);
+        back=findViewById(R.id.ibtnBack);
         EditText edtTaiKhoan = findViewById(R.id.edtTkDangKy);
         EditText edtMatKhau = findViewById(R.id.edtMkDk);
         EditText edtRe_MatKhau = findViewById(R.id.edtReMkDk);
@@ -66,7 +68,7 @@ public class sigIn extends AppCompatActivity {
             }
         });
         try {
-            GifDrawable gifDrawable = new GifDrawable(getResources(), R.drawable.img);
+            GifDrawable gifDrawable = new GifDrawable(getResources(), R.drawable.vit);
             vit.setImageDrawable(gifDrawable);
         } catch (IOException e) {
             e.printStackTrace();
