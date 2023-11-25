@@ -7,7 +7,7 @@
     <item
         android:id="@+id/phieu"
         android:icon="@drawable/phieu"
-        android:title="phiếu"/>
+        android:title="Phiếu"/>
     <item
         android:id="@+id/hang"
         android:icon="@drawable/hang"
@@ -15,7 +15,7 @@
     <item
         android:id="@+id/nhaSx"
         android:icon="@drawable/nhasx"
-        android:title="hãng"/>
+        android:title="Hãng"/>
     <item
         android:id="@+id/them"
         android:icon="@drawable/them"

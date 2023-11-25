@@ -14,7 +14,7 @@
         android:id="@+id/addHang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_margin="20dp"
         android:clickable="true"
         android:src="@android:drawable/ic_input_add"
         android:layout_alignParentBottom="true"

@@ -24,6 +24,8 @@ import com.example.knoxmanager.model.trangChu;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import me.relex.circleindicator.CircleIndicator;
 
@@ -34,21 +36,22 @@ public class frmtrangChu extends Fragment {
     public frmtrangChu() {
         // Required empty public constructor
     }
-private ViewPager viewPager;
+
+    private ViewPager viewPager;
     private CircleIndicator circleIndicator;
     private photoAdrapter photoAdrapter;
-    private RecyclerView rcvTrangChu;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-    View view = inflater.inflate(R.layout.fragment_trang_chu, container, false);
+        View view = inflater.inflate(R.layout.fragment_trang_chu, container, false);
 
-    viewPager=view.findViewById(R.id.ViewPager);
-    circleIndicator = view.findViewById(R.id.CircleIndicator);
+        viewPager = view.findViewById(R.id.ViewPager);
+        circleIndicator = view.findViewById(R.id.CircleIndicator);
 
-    photoAdrapter = new photoAdrapter(getActivity(),photoList() );
-    viewPager.setAdapter(photoAdrapter);
+        photoAdrapter = new photoAdrapter(getActivity(), photoList());
+        viewPager.setAdapter(photoAdrapter);
 
     circleIndicator.setViewPager(viewPager);
     photoAdrapter.registerDataSetObserver(circleIndicator.getDataSetObserver());
@@ -61,25 +64,52 @@ private ViewPager viewPager;
         return view;
     }
 
-    private List<trangChu> getList(){
-        List<trangChu> list = new ArrayList<>();
-        list.add(new trangChu(R.drawable.quan_ao,"Quản lý quần áo","so luong: 2",trangChu.TYPE_HANG));
-        list.add(new trangChu(R.drawable.quan_ao,"Quản lý hãng","so luong: 2",trangChu.TYPE_NHASX));
-        list.add(new trangChu(R.drawable.imgphieu,"Quản lý phiếu theo dõi","so luong: 0",trangChu.TYPE_PHIEU));
-        list.add(new trangChu(R.drawable.imgtk,"Quản lý tài khoản","so luong: 1",trangChu.TYPE_TAIKHOAN));
-        list.add(new trangChu(R.drawable.imgtk,"Quản lý TT khách hàng","so luong: 0",trangChu.TYPE_TTKHACHHANG));
-
-        return list;
-    }
-
-    private List<photo> photoList(){
         List<photo> list = new ArrayList<>();
         list.add(new photo(R.drawable.baner1));
         list.add(new photo(R.drawable.baner2));
         list.add(new photo(R.drawable.baner3));
         list.add(new photo(R.drawable.baner4));
         list.add(new photo(R.drawable.baner5));
-
         return list;
+    }
+
+    private Timer autoScrollTimer;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        startAutoScroll();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        stopAutoScroll();
+    }
+    private void startAutoScroll() {
+        autoScrollTimer = new Timer();
+        autoScrollTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                // Thay đổi trang hiển thị trong ViewPager
+                if (getActivity() != null) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            int currentItem = viewPager.getCurrentItem();
+                            int itemCount = viewPager.getAdapter().getCount();
+                            int nextItem = (currentItem + 1) % itemCount;
+                            viewPager.setCurrentItem(nextItem);
+                        }
+                    });
+                }
+            }
+        }, 3000, 3000);
+    }
+    private void stopAutoScroll() {
+        if (autoScrollTimer != null) {
+            autoScrollTimer.cancel();
+            autoScrollTimer = null;
+        }
     }
 }

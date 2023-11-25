@@ -1,15 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".frm.frmThem"
-    android:background="@drawable/bg">
+    android:background="@drawable/bg"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    tools:context=".frm.frmThem">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
 
-</FrameLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/avt" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/itim"
+                android:text="Xin chào!"
+                android:textColor="@color/black"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/itim"
+                android:text="ADMIN"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnQLTTKH"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/butum"
+        android:drawableStart="@drawable/qlttkh"
+        android:drawablePadding="20dp"
+        android:gravity="left"
+        android:padding="20dp"
+        android:text="Quản lý thông tin khách hàng"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btnQLNV"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/butum"
+        android:drawableStart="@drawable/qlnv"
+        android:drawablePadding="20dp"
+        android:gravity="left"
+        android:padding="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Quản lý nhân viên"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btnDoanhThu"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/butum"
+        android:drawableStart="@drawable/doanhthu"
+        android:drawablePadding="20dp"
+        android:gravity="left"
+        android:padding="20dp"
+        android:text="Doanh thu"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btnTop10"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/butum"
+        android:drawableStart="@drawable/top10"
+        android:drawablePadding="20dp"
+        android:gravity="left"
+        android:padding="20dp"
+        android:text="Top 10 lượt mua nhiều nhất"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btnDoiMatKhau"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/butum"
+        android:drawableStart="@drawable/doimk"
+        android:drawablePadding="20dp"
+        android:gravity="left"
+        android:padding="20dp"
+        android:text="Đổi mật khẩu"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btnDangXuat"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/butum"
+        android:drawableStart="@drawable/dangxuat"
+        android:drawablePadding="20dp"
+        android:gravity="left"
+        android:padding="20dp"
+        android:text="Đăng xuất"
+        android:textAllCaps="false" />
+</LinearLayout>

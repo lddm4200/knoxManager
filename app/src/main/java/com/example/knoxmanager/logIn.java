@@ -3,6 +3,7 @@ package com.example.knoxmanager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.content.Intent;
@@ -19,7 +20,7 @@ import pl.droidsonroids.gif.GifDrawable;
 public class logIn extends AppCompatActivity {
 private ImageView vit;
 private TextView butumDK;
-private TextView button;
+private Button button;
     private NguoiDungDao nguoiDungDao;
 
 
