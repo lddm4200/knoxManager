@@ -7,6 +7,40 @@
     android:orientation="vertical"
     tools:context=".frm.frmtrangChu">
 
-    
-   
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/img" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/itim"
+        android:text="KNOX MANAGER"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/ViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_margin="20dp" />
+
+    <me.relex.circleindicator.CircleIndicator
+        android:id="@+id/CircleIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal" />
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvTrangChu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="20dp" />
 </LinearLayout>
