@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
@@ -14,9 +16,11 @@ import android.widget.TextView;
 
 import com.example.knoxmanager.R;
 import com.example.knoxmanager.adrapter.photoAdrapter;
+import com.example.knoxmanager.adrapter.trangChuAdrapter;
 import com.example.knoxmanager.dao.NguoiDungDao;
 import com.example.knoxmanager.model.NguoiDung;
 import com.example.knoxmanager.model.photo;
+import com.example.knoxmanager.model.trangChu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +41,7 @@ public class frmtrangChu extends Fragment {
     private CircleIndicator circleIndicator;
     private photoAdrapter photoAdrapter;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,13 +53,17 @@ public class frmtrangChu extends Fragment {
         photoAdrapter = new photoAdrapter(getActivity(), photoList());
         viewPager.setAdapter(photoAdrapter);
 
-        circleIndicator.setViewPager(viewPager);
-        photoAdrapter.registerDataSetObserver(circleIndicator.getDataSetObserver());
+    circleIndicator.setViewPager(viewPager);
+    photoAdrapter.registerDataSetObserver(circleIndicator.getDataSetObserver());
+
+    rcvTrangChu=view.findViewById(R.id.rcvTrangChu);
+    GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),1);
+        rcvTrangChu.setLayoutManager(gridLayoutManager);
+        trangChuAdrapter adrapter = new trangChuAdrapter(getList());
+        rcvTrangChu.setAdapter(adrapter);
         return view;
     }
 
-
-    private List<photo> photoList() {
         List<photo> list = new ArrayList<>();
         list.add(new photo(R.drawable.baner1));
         list.add(new photo(R.drawable.baner2));
