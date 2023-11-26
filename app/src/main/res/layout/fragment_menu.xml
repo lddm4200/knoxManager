@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    android:gravity="center|top"
     android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".frm.frmThem">
 
     <LinearLayout
@@ -44,82 +44,109 @@
                 android:textSize="20sp" />
         </LinearLayout>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btnQLTTKH"
-        android:layout_width="300dp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/butum"
-        android:drawableStart="@drawable/qlttkh"
-        android:drawablePadding="20dp"
-        android:gravity="left"
-        android:padding="20dp"
-        android:text="Quản lý thông tin khách hàng"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/btnQLNV"
-        android:layout_width="300dp"
+        >
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/butum"
-        android:drawableStart="@drawable/qlnv"
-        android:drawablePadding="20dp"
-        android:gravity="left"
-        android:padding="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Quản lý nhân viên"
-        android:textAllCaps="false" />
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnDoanhThu"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/butum"
-        android:drawableStart="@drawable/doanhthu"
-        android:drawablePadding="20dp"
-        android:gravity="left"
-        android:padding="20dp"
-        android:text="Doanh thu"
-        android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btnTop10"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/butum"
-        android:drawableStart="@drawable/top10"
-        android:drawablePadding="20dp"
-        android:gravity="left"
-        android:padding="20dp"
-        android:text="Top 10 lượt mua nhiều nhất"
-        android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btnDoiMatKhau"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/butum"
-        android:drawableStart="@drawable/doimk"
-        android:drawablePadding="20dp"
-        android:gravity="left"
-        android:padding="20dp"
-        android:text="Đổi mật khẩu"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnQLTTKH"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/butum"
+            android:drawableStart="@drawable/qlttkh"
+            android:drawablePadding="20dp"
+            android:gravity="left"
+            android:padding="20dp"
+            android:text="Quản lý thông tin khách hàng"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btnDangXuat"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/butum"
-        android:drawableStart="@drawable/dangxuat"
-        android:drawablePadding="20dp"
-        android:gravity="left"
-        android:padding="20dp"
-        android:text="Đăng xuất"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnQLNV"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/butum"
+            android:drawableStart="@drawable/qlnv"
+            android:drawablePadding="20dp"
+            android:gravity="left"
+            android:padding="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Quản lý nhân viên"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnDoanhThu"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/butum"
+            android:drawableStart="@drawable/doanhthu"
+            android:drawablePadding="20dp"
+            android:gravity="left"
+            android:padding="20dp"
+            android:text="Doanh thu"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnTop10"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/butum"
+            android:drawableStart="@drawable/top10"
+            android:drawablePadding="20dp"
+            android:gravity="left"
+            android:padding="20dp"
+            android:text="Top 10 lượt mua nhiều nhất"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnDoiMatKhau"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/butum"
+            android:drawableStart="@drawable/doimk"
+            android:drawablePadding="20dp"
+            android:gravity="left"
+            android:padding="20dp"
+            android:text="Đổi mật khẩu"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnThongBao"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/butum"
+            android:drawableStart="@drawable/doimk"
+            android:drawablePadding="20dp"
+            android:gravity="left"
+            android:padding="20dp"
+            android:text="Thông báo"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnDangXuat"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/butum"
+            android:drawableStart="@drawable/dangxuat"
+            android:drawablePadding="20dp"
+            android:gravity="left"
+            android:padding="20dp"
+            android:text="Đăng xuất"
+            android:textAllCaps="false" />
+    </LinearLayout>
+</ScrollView>
 </LinearLayout>

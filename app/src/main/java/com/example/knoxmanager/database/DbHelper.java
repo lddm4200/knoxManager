@@ -43,6 +43,9 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         if(i != i1){
             db.execSQL("DROP TABLE IF EXISTS NGUOIDUNG");
+            db.execSQL("DROP TABLE IF EXISTS nhaSx");
+            db.execSQL("DROP TABLE IF EXISTS khachHang");
+            db.execSQL("DROP TABLE IF EXISTS hang");
             onCreate(db);
         }
     }
