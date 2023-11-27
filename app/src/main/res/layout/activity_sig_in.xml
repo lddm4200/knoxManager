@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center|top"
     android:background="@drawable/nen"
-    android:orientation="vertical"
-    tools:context=".sigIn">
+    android:orientation="vertical">
 
     <ImageButton
         android:id="@+id/ibtnBack"
@@ -44,7 +43,7 @@
         android:textStyle="italic" />
 
     <ImageView
-        android:id="@+id/vit"
+        android:id="@+id/vitdk"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_gravity="center"

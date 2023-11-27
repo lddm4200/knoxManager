@@ -16,7 +16,7 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         //bang tai khoan
-        String tb_nguoiDung = "CREATE TABLE NGUOIDUNG(TAIKHOAN TEXT PRIMARY KEY, MATKHAU TEXT,HOTEN TEXT)";
+        String tb_nguoiDung = "CREATE TABLE NGUOIDUNG(maNguoiDung TEXT PRIMARY KEY, matKhau TEXT,hoTen TEXT,phanQuyen INTEGER)";
         db.execSQL(tb_nguoiDung);
 
         String tb_nhasx = "create table nhaSx(maNhaSx INTEGER PRIMARY KEY AUTOINCREMENT,tenNhasx TEXT not null)";
@@ -33,7 +33,7 @@ public class DbHelper extends SQLiteOpenHelper {
 //        db.execSQL(tb_phieuTheoDoi);
 
         // them bang
-        db.execSQL("INSERT INTO NGUOIDUNG VALUES('','','')");
+        db.execSQL("INSERT INTO NGUOIDUNG VALUES('','','',0),('tk01','123456','cccc',1)");
         db.execSQL("INSERT INTO nhaSx VALUES(1,'evisu'),(2,'gucci'),(3,'Nike'),(4,'Adidas'),(5,'Docle'),(6,'Roway'),(7,'Teelab'),(8,'PoloGraph'),(9,'Internity'),(10,'Outerity')");
 //        db.execSQL("INSERT INTO hang VALUES(1,'ao',1,'222')");
 
