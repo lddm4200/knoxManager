@@ -33,7 +33,7 @@ public class DbHelper extends SQLiteOpenHelper {
 //        db.execSQL(tb_phieuTheoDoi);
 
         // them bang
-        db.execSQL("INSERT INTO NGUOIDUNG VALUES('','','',0),('tk01','123456','cccc',1)");
+        db.execSQL("INSERT INTO NGUOIDUNG VALUES('admin','123456','Đào Duy Minh Long',0),('tk01','123456','Quang',1),('tk02','123456','Khanh',1)");
         db.execSQL("INSERT INTO nhaSx VALUES(1,'evisu'),(2,'gucci'),(3,'Nike'),(4,'Adidas'),(5,'Docle'),(6,'Roway'),(7,'Teelab'),(8,'PoloGraph'),(9,'Internity'),(10,'Outerity')");
 //        db.execSQL("INSERT INTO hang VALUES(1,'ao',1,'222')");
 

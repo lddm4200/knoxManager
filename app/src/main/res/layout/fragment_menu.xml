@@ -36,10 +36,19 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tenTk_frrmMenu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/itim"
                 android:text="ADMIN"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/chucVu_frrmMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/itim"
+                android:text="Chuc vu"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
         </LinearLayout>

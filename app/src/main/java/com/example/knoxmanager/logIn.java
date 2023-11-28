@@ -131,12 +131,12 @@ private Button button;
         vitdk = dialog.findViewById(R.id.vitdk);
         ibtnBack = dialog.findViewById(R.id.ibtnBack);
 
-        try {
-            GifDrawable gifDrawable = new GifDrawable(getResources(), R.drawable.vit);
-            vitdk.setImageDrawable(gifDrawable);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            GifDrawable gifDrawable = new GifDrawable(getResources(), R.drawable.vit);
+//            vitdk.setImageDrawable(gifDrawable);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         ibtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
