@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.knoxmanager.dao.NguoiDungDao;
 import com.example.knoxmanager.model.NguoiDung;
 
@@ -118,8 +119,6 @@ private Button button;
         builder.setView(view);
         Dialog dialog = builder.create();
         dialog.show();
-
-
         NguoiDungDao tvDao = new NguoiDungDao(context);
 
         // anh xa
@@ -128,15 +127,7 @@ private Button button;
         edtMatKhau = dialog.findViewById(R.id.edtReMkDk);
         edtRe_MatKhau = dialog.findViewById(R.id.edtReMkDk);
         btnluu = dialog.findViewById(R.id.btnDksigin);
-        vitdk = dialog.findViewById(R.id.vitdk);
         ibtnBack = dialog.findViewById(R.id.ibtnBack);
-
-//        try {
-//            GifDrawable gifDrawable = new GifDrawable(getResources(), R.drawable.vit);
-//            vitdk.setImageDrawable(gifDrawable);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
 
         ibtnBack.setOnClickListener(new View.OnClickListener() {
             @Override

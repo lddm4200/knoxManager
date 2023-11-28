@@ -42,12 +42,6 @@
         android:textSize="15sp"
         android:textStyle="italic" />
 
-    <ImageView
-        android:id="@+id/vitdk"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center"
-        android:src="@drawable/vit" />
 
     <TextView
         android:layout_width="wrap_content"
