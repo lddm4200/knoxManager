@@ -137,7 +137,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/butum"
-            android:drawableStart="@drawable/doimk"
+            android:drawableStart="@drawable/thong_bao"
             android:drawablePadding="20dp"
             android:gravity="left"
             android:padding="20dp"
