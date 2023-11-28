@@ -65,23 +65,22 @@ public class frmThem extends Fragment {
         btnDangXuat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
-                builder1.setTitle("Cảnh báo!");
-                builder1.setMessage("Bạn có chắc chắn muốn thoat không?");
-                builder1.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("Thông báo");
+                builder.setMessage("Bạn có chắc chắn muốn đăng xuất?");
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(getActivity(), "Đăng xuất thành công", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getActivity(), logIn.class));
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(getActivity(), logIn.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
                     }
                 });
-                builder1.setNegativeButton("No",null);
-                builder1.show();
-
+                builder.setNegativeButton("No", null);
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
-
         return view;
     }
 }
