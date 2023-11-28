@@ -59,7 +59,8 @@ public class QlTaiKhoan extends AppCompatActivity {
     public void loadData() {
         list.clear();
         list.addAll(ndDAO.getAll());
-        rcvThanhVien.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        rcvThanhVien.setLayoutManager(linearLayoutManager);
         adapter = new NguoiDungAdrapter(this, list);
         rcvThanhVien.setAdapter(adapter);
         adapter.notifyDataSetChanged();
