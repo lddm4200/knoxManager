@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.knoxmanager.R;
+import com.example.knoxmanager.activitymenu.QLThngTinKhachHang;
 import com.example.knoxmanager.activitymenu.QlTaiKhoan;
 import com.example.knoxmanager.dao.NguoiDungDao;
 import com.example.knoxmanager.logIn;
@@ -25,7 +26,7 @@ public class frmThem extends Fragment {
     public frmThem() {
         // Required empty public constructor
     }
-    private Button btnDangXuat,btnQLNV,btnThongBao;
+    private Button btnQlTTKh,btnDangXuat,btnQLNV,btnThongBao;
     TextView ndUser,ndcv;
     NguoiDungDao ndDao;
     @Override
@@ -39,6 +40,14 @@ public class frmThem extends Fragment {
         ndUser=view.findViewById(R.id.tenTk_frrmMenu);
         ndcv=view.findViewById(R.id.chucVu_frrmMenu);
         btnThongBao=view.findViewById(R.id.btnThongBao);
+        btnQlTTKh=view.findViewById(R.id.btnQLTTKH);
+
+        btnQlTTKh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), QLThngTinKhachHang.class));
+            }
+        });
 
         Intent i = getActivity().getIntent();
         String user = i.getStringExtra("user");

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/butum"
+        android:weightSum="10"
+        >
+
+        <LinearLayout
+            android:layout_weight="9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtMaKh"
+                android:layout_gravity="center"
+                android:layout_marginBottom="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ma Kh: "
+                android:textStyle="bold"
+                android:textSize="21sp"
+                android:textColor="#F10000"
+                />
+            <TextView
+                android:id="@+id/txtTenKh"
+                android:layout_marginBottom="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ten kh: "
+                android:textStyle="bold"
+                android:textSize="19sp"
+                />
+            <TextView
+                android:id="@+id/txtSdtKh"
+                android:layout_marginBottom="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sdt: "
+                android:textStyle="bold"
+                android:textSize="19sp"
+                />
+            <TextView
+                android:id="@+id/txtGioiTinhKh"
+                android:layout_marginBottom="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="gioi tinh: "
+                android:textStyle="bold"
+                android:textSize="19sp"
+                />
+            <TextView
+                android:id="@+id/txtDiaChiKh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dia chi: "
+                android:textStyle="bold"
+                android:textSize="19sp"
+                />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/delete"
+            android:layout_gravity="center_vertical"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

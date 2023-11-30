@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    tools:context=".activitymenu.QlTaiKhoan"
     android:orientation="vertical"
-    tools:context=".activitymenu.QlTaiKhoan">
+    android:background="@drawable/bg"
+    >
 
     <ImageButton
         android:id="@+id/ibtnBackTk"
@@ -19,13 +20,13 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/butum"
         android:src="@drawable/back" />
-
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginHorizontal="20dp"
         android:id="@+id/Fragment_ThanhVien_RecycelView"
         android:layout_width="match_parent"
         android:layout_height="700dp"
         android:layout_below="@id/Fragment_ThanhVien_SearchView"
-        android:layout_marginHorizontal="20dp" />
+        />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/Fragment_ThanhVien_FloatBTN"
@@ -41,21 +42,21 @@
         android:src="@android:drawable/ic_input_add" />
 
     <SearchView
+        android:background="@drawable/butum"
+        android:layout_marginBottom="5dp"
+        android:layout_marginHorizontal="20dp"
         android:id="@+id/Fragment_ThanhVien_SearchView"
         android:layout_width="match_parent"
         android:layout_height="61dp"
-        android:layout_below="@id/ibtnBackTk"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/butum"
         android:queryHint="Tìm kiếm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.002"
 
-        app:layout_constraintVertical_bias="0.002" />
+        android:layout_below="@id/ibtnBackTk"/>
 
 
 </RelativeLayout>
