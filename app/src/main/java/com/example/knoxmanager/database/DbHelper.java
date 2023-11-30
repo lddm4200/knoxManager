@@ -29,12 +29,14 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL(tb_hang);
 
 
+
 //        String tb_phieuTheoDoi = "create table phieuTheoDoi(maPhieu INTEGER PRIMARY KEY AUTOINCREMENT,TAIKHOAN TEXT REFERENCES NGUOIDUNG(TAIKHOAN),maKhachHang INTEGER)";
 //        db.execSQL(tb_phieuTheoDoi);
 
         // them bang
-        db.execSQL("INSERT INTO NGUOIDUNG VALUES('admin','123456','Đào Duy Minh Long',0),('tk01','123456','Quang',1),('tk02','123456','Khanh',1)");
+        db.execSQL("INSERT INTO NGUOIDUNG VALUES('admin','123456','Đào Duy Minh Long',0),('tk01','123456','Trần Duy Quang',1),('tk02','123456','Sằm Nam Khánh',1)");
         db.execSQL("INSERT INTO nhaSx VALUES(1,'evisu'),(2,'gucci'),(3,'Nike'),(4,'Adidas'),(5,'Docle'),(6,'Roway'),(7,'Teelab'),(8,'PoloGraph'),(9,'Internity'),(10,'Outerity')");
+        db.execSQL("INSERT INTO khachHang VALUES(1,'kk','0987654321','nam','khu ba')");
 //        db.execSQL("INSERT INTO hang VALUES(1,'ao',1,'222')");
 
     }

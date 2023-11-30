@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    >
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edtTenKhDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tên khách hàng: " />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edtSdtKhDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="SDT khách hàng: " />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edtGioiTinhKhDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Giới tính khách hàng: " />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edtDiaChiKhDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Địa chỉ khách hàng: " />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/btn_dialogKh"
+        android:layout_width="200sp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="81sp"
+        android:background="@drawable/butum"
+        android:gravity="center"
+        android:text="Hoàn Thành"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+</LinearLayout>
