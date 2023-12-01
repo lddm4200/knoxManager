@@ -8,8 +8,8 @@
     tools:context=".frm.frmtrangChu">
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:src="@drawable/img" />
@@ -21,7 +21,7 @@
         android:fontFamily="@font/itim"
         android:text="KNOX MANAGER"
         android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textSize="28sp"
         android:textStyle="bold" />
 
     <androidx.viewpager.widget.ViewPager
@@ -38,9 +38,10 @@
 
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvTrangChu"
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="20dp" />
+        android:id="@+id/lvTrangChu"
+        android:layout_marginHorizontal="20dp"
+        />
 </LinearLayout>

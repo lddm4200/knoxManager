@@ -47,7 +47,7 @@ public class KhachHangAdrapter extends RecyclerView.Adapter<KhachHangAdrapter.vi
     @Override
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
         KhachHang tv = list.get(position);
-        holder.txtMaKh.setText("Mã khách hàng: "+list.get(position).getMaKhachHang());
+        holder.txtMaKh.setText("Mã khách hàng: KH"+list.get(position).getMaKhachHang());
         holder.txtTenKh.setText("Họ tên: "+tv.getTenKhachHang());
         holder.txtSoDienThoai.setText("SDT: "+tv.getSdt());
         holder.txtGioiTinh.setText("Giới Tính: "+tv.getGioiTinh());

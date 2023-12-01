@@ -13,6 +13,9 @@
         android:theme="@style/Theme.KnoxManager"
         tools:targetApi="31">
         <activity
+            android:name=".activitymenu.QLThongBao"
+            android:exported="false" />
+        <activity
             android:name=".activitymenu.DoiMatKhau"
             android:exported="false" />
         <activity

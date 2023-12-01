@@ -12,11 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.knoxmanager.R;
 import com.example.knoxmanager.activitymenu.QLThngTinKhachHang;
 import com.example.knoxmanager.activitymenu.QlTaiKhoan;
+import com.example.knoxmanager.activitymenu.QLThongBao;
 import com.example.knoxmanager.dao.NguoiDungDao;
 import com.example.knoxmanager.logIn;
 import com.example.knoxmanager.model.NguoiDung;
@@ -68,6 +68,13 @@ public class frmThem extends Fragment {
             @Override
             public void onClick(View view) {
                     startActivity(new Intent(getActivity(), QlTaiKhoan.class));
+            }
+        });
+
+        btnThongBao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), QLThongBao.class));
             }
         });
 

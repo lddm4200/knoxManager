@@ -176,18 +176,21 @@ public class frmhang extends Fragment {
                 item.setTenSp(edTenhang.getText().toString());
                 item.setMaNhaSx(maNhaSx);
                 item.setGia(edGia.getText().toString());
+
+
+
                 if (validate() > 0) {
                     if (type == 0) {
                         if (sachDAO.insert(item) > 0) {
                             Toast.makeText(context, "Thêm thành công", Toast.LENGTH_SHORT).show();
-                        } else {
+                        }else {
                             Toast.makeText(context, "Thêm thất bại", Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         item.setMaHang(Integer.parseInt(edMahang.getText().toString()));
                         if (sachDAO.update(item) > 0) {
                             Toast.makeText(context, "Sửa thành công", Toast.LENGTH_SHORT).show();
-                        } else {
+                        }else {
                             Toast.makeText(context, "Sứa thất bại", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -202,11 +205,18 @@ public class frmhang extends Fragment {
 
     public int validate() {
         int check = 1;
+        String gia = edGia.getText().toString();
         if (edTenhang.getText().length() == 0 || edGia.getText().length() == 0 ) {
             Toast.makeText(getContext(), "Bạn phải nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
             check = -1;
+        }else if(!iSo(gia)){
+            Toast.makeText(getContext(), "Gia tiền phải là số", Toast.LENGTH_SHORT).show();
         }
         return check;
+    }
+
+    public boolean iSo ( String so){
+        return so.matches("\\d+");
     }
     public static int parseInt(String string, int defaultValue) {
         try {

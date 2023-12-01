@@ -42,7 +42,7 @@ public class hangxadrapter extends ArrayAdapter<hangx> {
         final hangx item = list.get(position);
         if (item != null) {
             tvMaNhaSx = v.findViewById(R.id.txtMaHangX);
-            tvMaNhaSx.setText("Mã Hãng: " + item.getMaNhaSx());
+            tvMaNhaSx.setText("Mã Hãng: MH" + item.getMaNhaSx());
             tvTenNhaSx = v.findViewById(R.id.txtTenHangX);
             tvTenNhaSx.setText("Tên Hãng: " + item.getTenNhasx());
 

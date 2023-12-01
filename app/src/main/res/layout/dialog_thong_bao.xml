@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:text="Tiêu đề:"
+        android:textColor="@color/black"
+        android:layout_marginBottom="20dp"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/butum">
+
+        <EditText
+            android:id="@+id/edtTieuDeTbDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:text="Nội dung:"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_height="150dp"
+        android:background="@drawable/butum">
+
+        <EditText
+            android:id="@+id/edtNoiDungTbDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_dialogluuThongBaos"
+        android:layout_width="200sp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="81sp"
+        android:background="@drawable/butum"
+        android:gravity="center"
+        android:text="Hoàn Thành"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+</LinearLayout>

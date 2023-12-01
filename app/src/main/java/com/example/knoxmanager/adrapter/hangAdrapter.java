@@ -48,16 +48,16 @@ public class hangAdrapter  extends ArrayAdapter<hang> {
             hangxDao hangxDao1 = new hangxDao(context);
             hangx hangx1 = hangxDao1.getID(String.valueOf(item.getMaNhaSx()));
             tvMaHang = v.findViewById(R.id.txtHang);
-            tvMaHang.setText("Mã Hàng: " + item.getMaHang());
+            tvMaHang.setText("Mã Hàng: SP" + item.getMaHang());
 
             tvTenHang = v.findViewById(R.id.txtTenHang);
-            tvTenHang.setText("Tên hang: " + item.getTenSp());
+            tvTenHang.setText("Tên Hàng: " + item.getTenSp());
 
             tvNhaSx = v.findViewById(R.id.txtNhaSx);
             tvNhaSx.setText("Hãng: " + hangx1.getTenNhasx());
 
             tvGia = v.findViewById(R.id.txtGia);
-            tvGia.setText("giá: "+item.getGia());
+            tvGia.setText("giá: "+item.getGia()+" VND");
 
             imgDel = v.findViewById(R.id.delete_hang);
         }
