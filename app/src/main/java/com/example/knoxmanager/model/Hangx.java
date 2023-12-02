@@ -1,13 +1,13 @@
 package com.example.knoxmanager.model;
 
-public class hangx {
+public class Hangx {
     private int maNhaSx;
     private String tenNhasx;
 
-    public hangx() {
+    public Hangx() {
     }
 
-    public hangx(int maNhaSx, String tenNhasx) {
+    public Hangx(int maNhaSx, String tenNhasx) {
         this.maNhaSx = maNhaSx;
         this.tenNhasx = tenNhasx;
     }

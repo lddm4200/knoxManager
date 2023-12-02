@@ -11,15 +11,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.knoxmanager.R;
-import com.example.knoxmanager.model.hangx;
+import com.example.knoxmanager.model.Hangx;
 
 import java.util.ArrayList;
 
-public class hangxspinner extends ArrayAdapter<hangx> {
+public class hangxspinner extends ArrayAdapter<Hangx> {
     private Context context;
-    ArrayList<hangx> list;
+    ArrayList<Hangx> list;
     TextView tvMahangx, tvTenhangx;
-    public hangxspinner(@NonNull Context context, ArrayList<hangx> list) {
+    public hangxspinner(@NonNull Context context, ArrayList<Hangx> list) {
         super(context, 0, list);
         this.context = context;
         this.list = list;
@@ -34,7 +34,7 @@ public class hangxspinner extends ArrayAdapter<hangx> {
             v = inflater.inflate(R.layout.spinner_hangx, null);
 
         }
-        final hangx item = list.get(position);
+        final Hangx item = list.get(position);
         if (item != null) {
 
             tvTenhangx = v.findViewById(R.id.txt_tenhangxsp);
@@ -51,7 +51,7 @@ public class hangxspinner extends ArrayAdapter<hangx> {
             v = inflater.inflate(R.layout.spinner_hangx, null);
 
         }
-        final hangx item = list.get(position);
+        final Hangx item = list.get(position);
         if (item != null) {
 
             tvTenhangx = v.findViewById(R.id.txt_tenhangxsp);

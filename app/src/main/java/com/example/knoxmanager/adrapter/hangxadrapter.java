@@ -13,19 +13,19 @@ import androidx.annotation.Nullable;
 
 import com.example.knoxmanager.R;
 import com.example.knoxmanager.frm.frmNhasx;
-import com.example.knoxmanager.model.hangx;
+import com.example.knoxmanager.model.Hangx;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class hangxadrapter extends ArrayAdapter<hangx> {
+public class hangxadrapter extends ArrayAdapter<Hangx> {
     private Context context;
     frmNhasx fragment;
     TextView tvMaNhaSx, tvTenNhaSx;
     ImageView imgDel;
-    private List<hangx> list = new ArrayList<>();
+    private List<Hangx> list = new ArrayList<>();
 
-    public hangxadrapter(@NonNull Context context, frmNhasx fragment, ArrayList<hangx> list) {
+    public hangxadrapter(@NonNull Context context, frmNhasx fragment, ArrayList<Hangx> list) {
         super(context, 0,list);
         this.context = context;
         this.list = list;
@@ -39,7 +39,7 @@ public class hangxadrapter extends ArrayAdapter<hangx> {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             v = inflater.inflate(R.layout.item_view_hangx, null);
         }
-        final hangx item = list.get(position);
+        final Hangx item = list.get(position);
         if (item != null) {
             tvMaNhaSx = v.findViewById(R.id.txtMaHangX);
             tvMaNhaSx.setText("Mã Hãng: MH" + item.getMaNhaSx());

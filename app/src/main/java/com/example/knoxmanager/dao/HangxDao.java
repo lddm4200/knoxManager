@@ -7,7 +7,7 @@ import android.database.Cursor;
 import android.content.ContentValues;
 
 import com.example.knoxmanager.database.DbHelper;
-import com.example.knoxmanager.model.hangx;
+import com.example.knoxmanager.model.Hangx;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,13 +18,13 @@ public class HangxDao {
         DbHelper data = new DbHelper(context);
         db = data.getWritableDatabase();
     }
-    public long insert(hangx ls){
+    public long insert(Hangx ls){
         ContentValues values = new ContentValues();
         values.put("tenNhasx",ls.getTenNhasx());
         return db.insert("nhaSx",null,values);
     }
 
-    public long update(hangx ls){
+    public long update(Hangx ls){
         ContentValues values = new ContentValues();
         values.put("tenNhasx",ls.getTenNhasx());
         return db.update("nhaSx",values,"maNhaSx=?",new String[]{String.valueOf(ls.getMaNhaSx())});
@@ -33,23 +33,23 @@ public class HangxDao {
     public int delete(String id){
         return db.delete("nhaSx","maNhaSx=?",new String[]{id});
     }
-    public List<hangx> getAll(){
+    public List<Hangx> getAll(){
         String sql = "SELECT * FROM nhaSx";
         return getData(sql);
     }
 
-    public hangx getID(String id){
+    public Hangx getID(String id){
         String sql = "SELECT * FROM nhaSx WHERE maNhaSx=?";
-        List<hangx> list = getData(sql,id);
+        List<Hangx> list = getData(sql,id);
         return list.get(0);
     }
     @SuppressLint("Range")
-    private List<hangx> getData(String sql, String...selectionArgs){
-        List<hangx> list = new ArrayList<>();
+    private List<Hangx> getData(String sql, String...selectionArgs){
+        List<Hangx> list = new ArrayList<>();
         Cursor c = db.rawQuery(sql,selectionArgs);
 
         while (c.moveToNext()){
-            hangx ls = new hangx();
+            Hangx ls = new Hangx();
             ls.setMaNhaSx(Integer.parseInt(c.getString(c.getColumnIndex("maNhaSx"))));
             ls.setTenNhasx(c.getString(c.getColumnIndex("tenNhasx")));
             list.add(ls);

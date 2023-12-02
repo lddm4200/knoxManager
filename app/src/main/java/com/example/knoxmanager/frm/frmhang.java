@@ -26,7 +26,7 @@ import com.example.knoxmanager.adrapter.hangxspinner;
 import com.example.knoxmanager.dao.HangDao;
 import com.example.knoxmanager.dao.HangxDao;
 import com.example.knoxmanager.model.Hang;
-import com.example.knoxmanager.model.hangx;
+import com.example.knoxmanager.model.Hangx;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -47,9 +47,9 @@ public class frmhang extends Fragment {
     TextView btnSave;
 
     hangxspinner spinnerAdapter;
-    ArrayList<hangx> listHangx = new ArrayList<>();
+    ArrayList<Hangx> listHangxes = new ArrayList<>();
     HangxDao loaiSachDAO;
-    hangx hangx;
+    Hangx hangx;
     int maNhaSx, position;
 
     private SearchView searchView;
@@ -132,17 +132,17 @@ public class frmhang extends Fragment {
         edGia = dialog.findViewById(R.id.edgia);
         btnSave = dialog.findViewById(R.id.btnSavehang);
 
-        listHangx = new ArrayList<>();
+        listHangxes = new ArrayList<>();
         loaiSachDAO = new HangxDao(context);
-        listHangx = (ArrayList<hangx>) loaiSachDAO.getAll();
+        listHangxes = (ArrayList<Hangx>) loaiSachDAO.getAll();
 
-        spinnerAdapter = new hangxspinner(context, listHangx);
+        spinnerAdapter = new hangxspinner(context, listHangxes);
         spinner.setAdapter(spinnerAdapter);
         // lay maLoaiSach
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                maNhaSx = listHangx.get(position).getMaNhaSx();
+                maNhaSx = listHangxes.get(position).getMaNhaSx();
 //                Toast.makeText(context, "Chọn "+listLoaiSach.get(position).getTenLoai(), Toast.LENGTH_SHORT).show();
             }
 
@@ -158,8 +158,8 @@ public class frmhang extends Fragment {
             edTenhang.setText(item.getTenSp());
             edGia.setText(String.valueOf(item.getGia()));
 
-            for (int i = 0; i < listHangx.size(); i++)
-                if (item.getMaNhaSx() == (listHangx.get(i).getMaNhaSx())) {
+            for (int i = 0; i < listHangxes.size(); i++)
+                if (item.getMaNhaSx() == (listHangxes.get(i).getMaNhaSx())) {
                     position = i;
                 }
             Log.i("demo", "posSach " + position);

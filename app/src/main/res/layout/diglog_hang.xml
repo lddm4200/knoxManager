@@ -22,6 +22,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edTenHang"
+            android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint=" Tên Hàng"/>
@@ -56,6 +57,7 @@
             android:id="@+id/edgia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:hint=" Giá"/>
     </com.google.android.material.textfield.TextInputLayout>
 

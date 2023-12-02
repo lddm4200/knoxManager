@@ -15,7 +15,7 @@ import com.example.knoxmanager.R;
 import com.example.knoxmanager.dao.HangxDao;
 import com.example.knoxmanager.frm.frmhang;
 import com.example.knoxmanager.model.Hang;
-import com.example.knoxmanager.model.hangx;
+import com.example.knoxmanager.model.Hangx;
 
 import java.util.List;
 
@@ -45,7 +45,7 @@ public class hangAdrapter  extends ArrayAdapter<Hang> {
         final Hang item = list.get(position);
         if (item != null) {
             HangxDao hangxDao1 = new HangxDao(context);
-            hangx hangx1 = hangxDao1.getID(String.valueOf(item.getMaNhaSx()));
+            Hangx hangx1 = hangxDao1.getID(String.valueOf(item.getMaNhaSx()));
             tvMaHang = v.findViewById(R.id.txtHang);
             tvMaHang.setText("Mã Hàng: SP" + item.getMaHang());
 

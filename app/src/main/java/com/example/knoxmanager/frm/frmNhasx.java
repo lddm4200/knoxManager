@@ -20,7 +20,7 @@ import android.widget.Toast;
 import com.example.knoxmanager.R;
 import com.example.knoxmanager.adrapter.hangxadrapter;
 import com.example.knoxmanager.dao.HangxDao;
-import com.example.knoxmanager.model.hangx;
+import com.example.knoxmanager.model.Hangx;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -28,10 +28,10 @@ import java.util.ArrayList;
 
 public class frmNhasx extends Fragment {
     ListView lvLoaiSach;
-    ArrayList<hangx> list;
+    ArrayList<Hangx> list;
     static HangxDao dao;
     hangxadrapter adapter;
-    hangx item;
+    Hangx item;
     FloatingActionButton fab;
     Dialog dialog;
     EditText edMahang, edTenhang;
@@ -49,7 +49,7 @@ public class frmNhasx extends Fragment {
         fab = v.findViewById(R.id.Fragment_LoaiSach_FloatBTN);
         dao = new HangxDao(getActivity());
 
-        list = (ArrayList<hangx>) dao.getAll();
+        list = (ArrayList<Hangx>) dao.getAll();
         adapter = new hangxadrapter(getActivity(), this, list);
         lvLoaiSach.setAdapter(adapter);
 
@@ -73,7 +73,7 @@ public class frmNhasx extends Fragment {
     }
 
     void capNhatLv() {
-        list = (ArrayList<hangx>) dao.getAll();
+        list = (ArrayList<Hangx>) dao.getAll();
         adapter = new hangxadrapter(getActivity(), this, list);
         lvLoaiSach.setAdapter(adapter);
     }
@@ -93,7 +93,7 @@ public class frmNhasx extends Fragment {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                item = new hangx();
+                item = new Hangx();
                 item.setTenNhasx(edTenhang.getText().toString());
                 if (validate() > 0) {
                     if (type == 0) {
