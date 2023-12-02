@@ -66,7 +66,7 @@ public class ThongBaoAdapter extends ArrayAdapter<ThongBao> {
             NguoiDung nguoiDung = ndDao.getID(item.getMaNguoiDung());
 
             txtHoTenNguoiDung = view.findViewById(R.id.ngTao_thongBao);
-            txtHoTenNguoiDung.setText("Người đăng: "+ nguoiDung.getHoTen());
+            txtHoTenNguoiDung.setText("by "+ nguoiDung.getHoTen());
 
             txtNgay=view.findViewById(R.id.ngayTao_thongBao);
             txtNgay.setText(item.getNgayDang());

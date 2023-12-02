@@ -3,8 +3,10 @@ package com.example.knoxmanager.activitymenu;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +15,11 @@ import android.widget.Toast;
 
 import com.example.knoxmanager.R;
 import com.example.knoxmanager.dao.NguoiDungDao;
+import com.example.knoxmanager.logIn;
 import com.example.knoxmanager.model.NguoiDung;
+
+import java.util.concurrent.Delayed;
+import java.util.concurrent.TimeUnit;
 
 public class DoiMatKhau extends AppCompatActivity {
     EditText edtDoiMKCu, edtDoiMKMoi, edtNhapLaiMKMoi;
@@ -46,13 +52,20 @@ public class DoiMatKhau extends AppCompatActivity {
                     nguoiDung.setMatKhau(edtDoiMKMoi.getText().toString());
                     nguoiDungDao.update(nguoiDung);
                     if(nguoiDungDao.update(nguoiDung)>0){
-                        Toast.makeText(DoiMatKhau.this , "Thay đổi mật khẩu thành công", Toast.LENGTH_SHORT).show();
-                        edtDoiMKCu.setText("");
-                        edtNhapLaiMKMoi.setText("");
-                        edtDoiMKMoi.setText("");
+                        Toast.makeText(DoiMatKhau.this , "Thay đổi mật khẩu thành công!\nVui lòng đăng nhập lại", Toast.LENGTH_SHORT).show();
+                        finish();
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(DoiMatKhau.this, logIn.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+                            }
+                        },1000);
                     }
                     else {
-                        Toast.makeText(DoiMatKhau.this, "Thây đổi mật khẩu thất bại", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(DoiMatKhau.this, "Thay đổi mật khẩu thất bại!", Toast.LENGTH_SHORT).show();
                     }
                 }
             }

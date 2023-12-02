@@ -49,7 +49,7 @@ public class KhachHangAdrapter extends RecyclerView.Adapter<KhachHangAdrapter.vi
         KhachHang tv = list.get(position);
         holder.txtMaKh.setText("Mã khách hàng: KH"+list.get(position).getMaKhachHang());
         holder.txtTenKh.setText("Họ tên: "+tv.getTenKhachHang());
-        holder.txtSoDienThoai.setText("SDT: "+tv.getSdt());
+        holder.txtSoDienThoai.setText("SĐT: "+tv.getSdt());
         holder.txtGioiTinh.setText("Giới Tính: "+tv.getGioiTinh());
         holder.txtDiaChi.setText("Địa chỉ: "+tv.getDiaChi());
 

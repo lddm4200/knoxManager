@@ -98,16 +98,16 @@ public class frmNhasx extends Fragment {
                 if (validate() > 0) {
                     if (type == 0) {
                         if (dao.insert(item) > 0) {
-                            Toast.makeText(context, "Thêm thành công", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Thêm thành công!", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(context, "Thêm thất bại", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Thêm thất bại!", Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         item.setMaNhaSx(Integer.parseInt(edMahang.getText().toString()));
                         if (dao.update(item) > 0) {
-                            Toast.makeText(context, "Sửa thành công", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Sửa thành công!", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(context, "Sửa thất bại", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Sửa thất bại!", Toast.LENGTH_SHORT).show();
                         }
                     }
                     capNhatLv();

@@ -19,6 +19,7 @@ import com.example.knoxmanager.activitymenu.QLThngTinKhachHang;
 import com.example.knoxmanager.activitymenu.QLThongBao;
 import com.example.knoxmanager.activitymenu.QlTaiKhoan;
 //import com.example.knoxmanager.activitymenu.QLThongBao;
+import com.example.knoxmanager.activitymenu.Top10;
 import com.example.knoxmanager.dao.NguoiDungDao;
 import com.example.knoxmanager.logIn;
 import com.example.knoxmanager.model.NguoiDung;
@@ -28,7 +29,7 @@ public class frmThem extends Fragment {
     public frmThem() {
         // Required empty public constructor
     }
-    private Button btnQlTTKh,btnDangXuat,btnQLNV,btnThongBao,btnDoiMatKhau;
+    private Button btnQlTTKh,btnDangXuat,btnQLNV,btnThongBao,btnDoiMatKhau,btnTop10;
     TextView ndUser,ndcv;
     NguoiDungDao ndDao;
     @Override
@@ -40,6 +41,7 @@ public class frmThem extends Fragment {
         btnDangXuat=view.findViewById(R.id.btnDangXuat);
         btnQLNV=view.findViewById(R.id.btnQLNV);
         ndUser=view.findViewById(R.id.tenTk_frrmMenu);
+        btnTop10=view.findViewById(R.id.btnTop10);
         ndcv=view.findViewById(R.id.chucVu_frrmMenu);
         btnThongBao=view.findViewById(R.id.btnThongBao);
         btnQlTTKh=view.findViewById(R.id.btnQLTTKH);
@@ -65,7 +67,12 @@ public class frmThem extends Fragment {
             btnQLNV.setVisibility(View.GONE);
             btnThongBao.setVisibility(View.GONE);
         }
-
+    btnTop10.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            startActivity(new Intent(getActivity(), Top10.class));
+        }
+    });
         btnQLNV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

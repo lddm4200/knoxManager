@@ -141,15 +141,15 @@ private Button button;
                 String pass = edtMatKhau.getText().toString();
                 String confirm = edtRe_MatKhau.getText().toString();
                 if (user.trim().isEmpty() || hoten.trim().isEmpty()|| pass.trim().isEmpty() || confirm.trim().isEmpty()) {
-                    Toast.makeText(context, "Không được để trống thông tin", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Không được để trống thông tin!", Toast.LENGTH_SHORT).show();
                 } else if (tvDao.checkUser(user)) {
-                    Toast.makeText(context, "Tên đăng nhập đã tồn tại", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Tên đăng nhập đã tồn tại!", Toast.LENGTH_SHORT).show();
                 } else if (!pass.equals(confirm)) {
-                    Toast.makeText(context, "Mật khẩu chưa khớp", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Mật khẩu chưa khớp!", Toast.LENGTH_SHORT).show();
                 } else {
                     NguoiDung tv = new NguoiDung(user, pass, hoten, 1);
                     tvDao.insert(tv);
-                    Toast.makeText(context, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();
                     if (type == 1) {
                         list.clear();
                         list.addAll(tvDao.getAll());
@@ -167,14 +167,14 @@ private Button button;
             Toast.makeText(this, "Tên đăng nhập hoặc mật khẩu không được bỏ trống", Toast.LENGTH_SHORT).show();
         } else {
             if (nguoiDungDao.checkLogin(strUser, strPass) > 0) {
-                Toast.makeText(getApplicationContext(), "Login thành công", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Login thành công!", Toast.LENGTH_SHORT).show();
                 rememberUser(strUser, strPass, chkRemember.isChecked(),nguoiDungDao.getID(strUser).getPhanQuyen());
                 Intent intent = new Intent(getApplicationContext(), bottomMenu.class);
                 intent.putExtra("user", strUser);
                 startActivity(intent);
                 finish();
             } else {
-                Toast.makeText(this, "Tên đăng nhập hoặc mật khẩu không đúng", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Tên đăng nhập hoặc mật khẩu không đúng!", Toast.LENGTH_SHORT).show();
             }
         }
     }

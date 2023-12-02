@@ -22,7 +22,7 @@
             android:name=".activitymenu.Top10"
             android:exported="false" />
         <activity
-            android:name=".activitymenu.doanhThu"
+            android:name=".activitymenu.DoanhThu"
             android:exported="false" />
         <activity
             android:name=".activitymenu.QlTaiKhoan"

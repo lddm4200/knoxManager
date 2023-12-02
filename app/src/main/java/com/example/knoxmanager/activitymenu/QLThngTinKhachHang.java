@@ -115,7 +115,7 @@ public class QLThngTinKhachHang extends AppCompatActivity {
                 } else {
                     KhachHang tv = new KhachHang(type, hoten, sdt, pass, confirm);
                     tvDao.insert(tv);
-                    Toast.makeText(context, "Them thành công", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Thêm thành công", Toast.LENGTH_SHORT).show();
                     if (type == 1) {
                         list.clear();
                         list.addAll(tvDao.getAll());

@@ -134,11 +134,11 @@ public class frmphieuTheoDoi extends Fragment {
                         String ngay = sdf.format(new Date());
                         String sl = edtSoLuong.getText().toString();
                         if(sl.isEmpty()){
-                            Toast.makeText(getActivity(), "Không được bỏ trống", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Không được bỏ trống!", Toast.LENGTH_SHORT).show();
                             return;
                         }
                         if (Integer.parseInt(sl)<=0){
-                            Toast.makeText(getActivity(), "Số lượng phải lớn hơn 0", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Số lượng phải lớn hơn 0!", Toast.LENGTH_SHORT).show();
                             return;
                         }
                         phieuTheoDoi.setMaHang(maSP);
@@ -151,12 +151,12 @@ public class frmphieuTheoDoi extends Fragment {
                         if(phieuDAO.insert(phieuTheoDoi)!=-1){
                             list.clear();
                             list.addAll(phieuDAO.getAll());
-                            Toast.makeText(getActivity(), "Thêm thành công", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Thêm thành công!", Toast.LENGTH_SHORT).show();
                             phieuMuonAdapter.notifyDataSetChanged();
                             dialog.dismiss();
                         }
                         else {
-                            Toast.makeText(getActivity(), "Thêm thất bại", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Thêm thất bại!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

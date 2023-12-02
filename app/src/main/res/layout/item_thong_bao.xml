@@ -1,84 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp"
+    android:orientation="vertical"
     android:layout_marginTop="10dp"
     android:background="@drawable/butum"
-    android:weightSum="10"
-    android:orientation="horizontal"
-    >
-    <LinearLayout
+
+    android:gravity="center">
+    <TextView
+        android:id="@+id/tieuDe_thongBao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="9"
-        android:orientation="vertical"
-        >
-        <TextView
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textColor="#FF0000"
-            android:textSize="21sp"
-            android:text="Tiêu đề"
-            android:id="@+id/tieuDe_thongBao"
-            />
-        <TextView
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textSize="19sp"
-            android:text="noi dung"
-            android:id="@+id/noiDUng_thongBao"
-            />
+        android:fontFamily="@font/itim"
+        android:text="Tiêu đề"
+        android:layout_marginTop="10dp"
+        android:textColor="#FF0000"
+        android:textSize="23sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:weightSum="10">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="10"
-            >
+            android:layout_weight="9"
+            android:orientation="vertical">
+
             <TextView
-                android:layout_weight="8"
-                android:layout_marginTop="5dp"
+                android:id="@+id/noiDUng_thongBao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/itim"
+                android:text="noi dung"
                 android:textColor="@color/black"
-                android:textSize="15sp"
-                android:text="ng tao"
-                android:id="@+id/ngTao_thongBao"
-                />
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_width="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textColor="#787676"
-                android:textSize="19sp"
-                android:text="ngay tao"
-                android:id="@+id/ngayTao_thongBao"
-                />
+                android:gravity="right"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/ngTao_thongBao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/itim"
+                    android:text="ng tao"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/ngayTao_thongBao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/itim"
+                    android:text="ngay tao"
+                    android:textColor="#000000"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/deleteThongBao"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/delete" />
+        </LinearLayout>
 
     </LinearLayout>
 
-    <ImageView
-        android:layout_gravity="center_vertical"
-        android:layout_width="20dp"
-        android:layout_height="50dp"
-        android:src="@drawable/delete"
-        android:layout_weight="1"
-        android:id="@+id/deleteThongBao"
-        />
-
 </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

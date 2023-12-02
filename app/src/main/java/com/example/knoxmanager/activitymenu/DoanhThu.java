@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.knoxmanager.R;
 
-public class doanhThu extends AppCompatActivity {
+public class DoanhThu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

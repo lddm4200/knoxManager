@@ -59,7 +59,7 @@ public class hangAdrapter  extends ArrayAdapter<Hang> {
             tvNhaSx.setText("Hãng: " + hangx1.getTenNhasx());
 
             tvGia = v.findViewById(R.id.txtGia);
-            tvGia.setText("giá: "+decimalFormat.format(item.getGia())+" VND");
+            tvGia.setText("Giá: "+decimalFormat.format(item.getGia())+" VNĐ");
 
             imgDel = v.findViewById(R.id.delete_hang);
         }

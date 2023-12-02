@@ -9,6 +9,15 @@
     android:background="@drawable/bg"
     android:padding="10dp"
     >
+    <ImageButton
+        android:id="@+id/ibtnBackTB"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/butum"
+        android:src="@drawable/back" />
 
     <LinearLayout
         android:id="@+id/llThem"
@@ -16,7 +25,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_margin="10dp"
+        android:layout_marginBottom="10dp"
         android:padding="10dp"
         android:background="@drawable/butum"
         >

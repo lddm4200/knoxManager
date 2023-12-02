@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -49,6 +50,7 @@ public class QLThongBao extends AppCompatActivity {
 
 
     EditText edTieuDeAdd;
+    ImageButton btnBack;
     EditText edNoiDungAdd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +58,17 @@ public class QLThongBao extends AppCompatActivity {
         setContentView(R.layout.activity_thong_bao);
         lvThongBao = findViewById(R.id.lvThongBao);
         imgAddThongBao = findViewById(R.id.llThem);
+        btnBack = findViewById(R.id.ibtnBackTB);
         tbDAO = new ThongBaoDao(this);
         ndDAO = new NguoiDungDao(this);
 
         loadData();
-
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         imgAddThongBao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
