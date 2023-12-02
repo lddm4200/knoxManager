@@ -156,7 +156,7 @@ public class frmhang extends Fragment {
         if (type != 0) {
             edMahang.setText(String.valueOf(item.getMaHang()));
             edTenhang.setText(item.getTenSp());
-            edGia.setText(item.getGia());
+            edGia.setText(String.valueOf(item.getGia()));
 
             for (int i = 0; i < listHangx.size(); i++)
                 if (item.getMaNhaSx() == (listHangx.get(i).getMaNhaSx())) {
@@ -202,12 +202,9 @@ public class frmhang extends Fragment {
 
     public int validate() {
         int check = 1;
-        String gia = edGia.getText().toString();
         if (edTenhang.getText().length() == 0 || edGia.getText().length() == 0 ) {
             Toast.makeText(getContext(), "Bạn phải nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
             check = -1;
-        }else if(!iSo(gia)){
-            Toast.makeText(getContext(), "Gia tiền phải là số", Toast.LENGTH_SHORT).show();
         }
         return check;
     }
