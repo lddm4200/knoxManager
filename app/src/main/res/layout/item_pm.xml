@@ -8,6 +8,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/khung_item_pm"
         android:gravity="center"
+        android:layout_marginBottom="10dp"
         android:orientation="vertical"
         android:padding="10dp">
 
@@ -72,13 +73,26 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/txtTrangThai"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Trạng thái: Đang giao"
-                    android:textColor="#1ED300"
-                    android:textSize="10sp" />
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Trạng thái:"
+                        android:textColor="@color/black"
+                        android:textSize="10sp"
+                        android:layout_marginRight="3dp"/>
+                    <TextView
+                        android:id="@+id/txtTrangThai"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Đang giao"
+                        android:textColor="#1ED300"
+                        android:textSize="10sp" />
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/txtNgayDat"

@@ -25,7 +25,7 @@ import com.example.knoxmanager.adrapter.hangAdrapter;
 import com.example.knoxmanager.adrapter.hangxspinner;
 import com.example.knoxmanager.dao.HangDao;
 import com.example.knoxmanager.dao.HangxDao;
-import com.example.knoxmanager.model.hang;
+import com.example.knoxmanager.model.Hang;
 import com.example.knoxmanager.model.hangx;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -36,8 +36,8 @@ public class frmhang extends Fragment {
     ListView lvSach;
     HangDao sachDAO;
     hangAdrapter adapter;
-    hang item;
-    ArrayList<hang> list = new ArrayList<>();
+    Hang item;
+    ArrayList<Hang> list = new ArrayList<>();
 
 
     FloatingActionButton fab;
@@ -69,7 +69,7 @@ public class frmhang extends Fragment {
 
 //        capNhatLv();
         fab = v.findViewById(R.id.addHang);
-        list = (ArrayList<hang>) sachDAO.getAll();
+        list = (ArrayList<Hang>) sachDAO.getAll();
         adapter = new hangAdrapter(getContext(), this, list);
         lvSach.setAdapter(adapter);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -90,7 +90,7 @@ public class frmhang extends Fragment {
     }
 
     void capNhatLv() {
-        list = (ArrayList<hang>) sachDAO.getAll();
+        list = (ArrayList<Hang>) sachDAO.getAll();
         adapter = new hangAdrapter(getContext(), this, list);
         lvSach.setAdapter(adapter);
     }
@@ -169,7 +169,7 @@ public class frmhang extends Fragment {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                item = new hang();
+                item = new Hang();
                 item.setTenSp(edTenhang.getText().toString());
                 item.setMaNhaSx(maNhaSx);
                 item.setGia(Integer.parseInt(edGia.getText().toString()));

@@ -1,5 +1,6 @@
 package com.example.knoxmanager.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -38,5 +39,37 @@ public class PhieuDAO {
         }
         cursor.close();
         return list;
+    }
+
+    public long insert(PhieuTheoDoi phieuTheoDoi) {
+        ContentValues values = new ContentValues();
+        sqLiteDatabase = dbHelper.getWritableDatabase();
+        values.put("maNguoiDung", phieuTheoDoi.getMaNguoiDung());
+        values.put("maKhachHang", phieuTheoDoi.getMaKH());
+        values.put("maHang", phieuTheoDoi.getMaHang());
+        values.put("giaMua", phieuTheoDoi.getGiaMua());
+        values.put("trangThai", phieuTheoDoi.getTrangThai());
+        values.put("ngayDat", phieuTheoDoi.getNgayDat());
+        values.put("soLuong", phieuTheoDoi.getSoLuong());
+        values.put("tongTien", phieuTheoDoi.getTongTien());
+        return sqLiteDatabase.insert("PHIEUTHEODOI", null, values);
+    }
+
+    public long update(PhieuTheoDoi phieuTheoDoi) {
+        ContentValues values = new ContentValues();
+        sqLiteDatabase = dbHelper.getWritableDatabase();
+        values.put("maNguoiDung", phieuTheoDoi.getMaNguoiDung());
+        values.put("maKhachHang", phieuTheoDoi.getMaKH());
+        values.put("maHang", phieuTheoDoi.getMaHang());
+        values.put("giaMua", phieuTheoDoi.getGiaMua());
+        values.put("trangThai", phieuTheoDoi.getTrangThai());
+        values.put("ngayDat", phieuTheoDoi.getNgayDat());
+        values.put("soLuong", phieuTheoDoi.getSoLuong());
+        values.put("tongTien", phieuTheoDoi.getTongTien());
+        return sqLiteDatabase.update("PHIEUTHEODOI", values, "maPhieu=?", new String[]{String.valueOf(phieuTheoDoi.getMaPhieu())});
+    }
+    public long delete(String id) {
+        sqLiteDatabase = dbHelper.getWritableDatabase();
+        return sqLiteDatabase.delete("PHIEUTHEODOI", "maPhieu=?", new String[]{id});
     }
 }

@@ -14,20 +14,20 @@ import androidx.annotation.Nullable;
 import com.example.knoxmanager.R;
 import com.example.knoxmanager.dao.HangxDao;
 import com.example.knoxmanager.frm.frmhang;
-import com.example.knoxmanager.model.hang;
+import com.example.knoxmanager.model.Hang;
 import com.example.knoxmanager.model.hangx;
 
 import java.util.List;
 
-public class hangAdrapter  extends ArrayAdapter<hang> {
+public class hangAdrapter  extends ArrayAdapter<Hang> {
     private Context context;
     frmhang fragment;
-    List<hang> list;
+    List<Hang> list;
 
     TextView tvMaHang, tvTenHang, tvNhaSx,tvGia;
     ImageView imgDel;
 
-    public hangAdrapter(@NonNull Context context,frmhang fragment, List<hang> list) {
+    public hangAdrapter(@NonNull Context context,frmhang fragment, List<Hang> list) {
         super(context, 0, list);
         this.context = context;
         this.fragment = fragment;
@@ -42,7 +42,7 @@ public class hangAdrapter  extends ArrayAdapter<hang> {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             v = inflater.inflate(R.layout.item_view_hang, null);
         }
-        final hang item = list.get(position);
+        final Hang item = list.get(position);
         if (item != null) {
             HangxDao hangxDao1 = new HangxDao(context);
             hangx hangx1 = hangxDao1.getID(String.valueOf(item.getMaNhaSx()));
