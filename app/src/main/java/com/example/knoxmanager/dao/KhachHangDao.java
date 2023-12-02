@@ -44,10 +44,16 @@ public class KhachHangDao {
         return getData(sql);
     }
 
-    public KhachHang getID(String id) {
-        String sql = "SELECT * FROM khachHang WHERE maKhachHang=?";
-        List<KhachHang> list = getData(sql, id);
-        return list.get(0);
+    public String getID(String id) {
+        Cursor cursor = db.rawQuery("SELECT tenKhachHang FROM khachHang WHERE maKhachHang =?", new String[]{id});
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            String hoten = cursor.getString(0);
+            cursor.close();
+            return hoten;
+        }
+        cursor.close();
+        return "Không tìm thấy";
     }
 
     @SuppressLint("Range")

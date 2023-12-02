@@ -7,7 +7,6 @@
     tools:context=".frm.frmNhasx"
     android:padding="10px"
     android:background="@drawable/bg">
-
     <ListView
         android:id="@+id/Fragment_hangx_RecycelView"
         android:layout_width="match_parent"
@@ -26,7 +25,7 @@
     <SearchView
         android:id="@+id/Fragment_hang_SearchView"
         android:layout_width="match_parent"
-        android:layout_height="61dp"
+        android:layout_height="60dp"
         android:queryHint="Tìm kiếm"
         android:background="@drawable/butum"
         android:layout_marginBottom="20px"

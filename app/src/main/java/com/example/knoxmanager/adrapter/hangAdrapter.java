@@ -12,8 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.knoxmanager.R;
-import com.example.knoxmanager.dao.hangDao;
-import com.example.knoxmanager.dao.hangxDao;
+import com.example.knoxmanager.dao.HangxDao;
 import com.example.knoxmanager.frm.frmhang;
 import com.example.knoxmanager.model.hang;
 import com.example.knoxmanager.model.hangx;
@@ -45,7 +44,7 @@ public class hangAdrapter  extends ArrayAdapter<hang> {
         }
         final hang item = list.get(position);
         if (item != null) {
-            hangxDao hangxDao1 = new hangxDao(context);
+            HangxDao hangxDao1 = new HangxDao(context);
             hangx hangx1 = hangxDao1.getID(String.valueOf(item.getMaNhaSx()));
             tvMaHang = v.findViewById(R.id.txtHang);
             tvMaHang.setText("Mã Hàng: SP" + item.getMaHang());

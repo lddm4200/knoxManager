@@ -12,9 +12,9 @@ import com.example.knoxmanager.model.hangx;
 import java.util.ArrayList;
 import java.util.List;
 
-public class hangxDao {
+public class HangxDao {
     private SQLiteDatabase db;
-    public hangxDao(Context context) {
+    public HangxDao(Context context) {
         DbHelper data = new DbHelper(context);
         db = data.getWritableDatabase();
     }

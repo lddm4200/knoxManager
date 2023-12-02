@@ -2,12 +2,13 @@ package com.example.knoxmanager.model;
 
 public class hang {
     private int maHang,maNhaSx;
-    private String tenSp,gia;
+    private String tenSp;
+    private int gia;
 
     public hang() {
     }
 
-    public hang(int maHang, int maNhaSx, String tenSp, String gia) {
+    public hang(int maHang, int maNhaSx, String tenSp, int gia) {
         this.maHang = maHang;
         this.maNhaSx = maNhaSx;
         this.tenSp = tenSp;
@@ -38,11 +39,11 @@ public class hang {
         this.tenSp = tenSp;
     }
 
-    public String getGia() {
+    public int getGia() {
         return gia;
     }
 
-    public void setGia(String gia) {
+    public void setGia(int gia) {
         this.gia = gia;
     }
 }

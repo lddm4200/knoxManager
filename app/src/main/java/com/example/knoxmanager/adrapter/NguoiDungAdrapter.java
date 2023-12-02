@@ -27,7 +27,7 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 
-public class NguoiDungAdrapter extends RecyclerView.Adapter<NguoiDungAdrapter.viewholder> {
+public class    NguoiDungAdrapter extends RecyclerView.Adapter<NguoiDungAdrapter.viewholder> {
 //
     private NguoiDungDao ndDAO;
     private final Context context;

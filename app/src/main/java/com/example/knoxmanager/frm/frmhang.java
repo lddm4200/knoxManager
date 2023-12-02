@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 
@@ -15,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -25,19 +23,18 @@ import android.widget.Toast;
 import com.example.knoxmanager.R;
 import com.example.knoxmanager.adrapter.hangAdrapter;
 import com.example.knoxmanager.adrapter.hangxspinner;
-import com.example.knoxmanager.dao.hangDao;
-import com.example.knoxmanager.dao.hangxDao;
+import com.example.knoxmanager.dao.HangDao;
+import com.example.knoxmanager.dao.HangxDao;
 import com.example.knoxmanager.model.hang;
 import com.example.knoxmanager.model.hangx;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class frmhang extends Fragment {
     ListView lvSach;
-    hangDao sachDAO;
+    HangDao sachDAO;
     hangAdrapter adapter;
     hang item;
     ArrayList<hang> list = new ArrayList<>();
@@ -51,7 +48,7 @@ public class frmhang extends Fragment {
 
     hangxspinner spinnerAdapter;
     ArrayList<hangx> listHangx = new ArrayList<>();
-    hangxDao loaiSachDAO;
+    HangxDao loaiSachDAO;
     hangx hangx;
     int maNhaSx, position;
 
@@ -68,7 +65,7 @@ public class frmhang extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_hang, container, false);
         lvSach = v.findViewById(R.id.lvHang);
-        sachDAO = new hangDao(getActivity());
+        sachDAO = new HangDao(getActivity());
 
 //        capNhatLv();
         fab = v.findViewById(R.id.addHang);
@@ -136,7 +133,7 @@ public class frmhang extends Fragment {
         btnSave = dialog.findViewById(R.id.btnSavehang);
 
         listHangx = new ArrayList<>();
-        loaiSachDAO = new hangxDao(context);
+        loaiSachDAO = new HangxDao(context);
         listHangx = (ArrayList<hangx>) loaiSachDAO.getAll();
 
         spinnerAdapter = new hangxspinner(context, listHangx);
@@ -175,7 +172,7 @@ public class frmhang extends Fragment {
                 item = new hang();
                 item.setTenSp(edTenhang.getText().toString());
                 item.setMaNhaSx(maNhaSx);
-                item.setGia(edGia.getText().toString());
+                item.setGia(Integer.parseInt(edGia.getText().toString()));
 
 
 

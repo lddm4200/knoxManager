@@ -44,9 +44,6 @@ public class QLThongBao extends AppCompatActivity {
 
     ThongBaoAdapter adapter;
 
-
-
-
     ThongBao item;
     LinearLayout imgAddThongBao;
 

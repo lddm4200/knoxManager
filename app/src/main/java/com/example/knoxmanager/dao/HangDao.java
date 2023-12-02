@@ -12,9 +12,9 @@ import com.example.knoxmanager.model.hang;
 import java.util.ArrayList;
 import java.util.List;
 
-public class hangDao {
+public class HangDao {
     private SQLiteDatabase db;
-    public hangDao(Context context) {
+    public HangDao(Context context) {
         DbHelper dbHelper = new DbHelper(context);
         db = dbHelper.getWritableDatabase();
     }
@@ -44,10 +44,26 @@ public class hangDao {
         return list;
     }
 
-    public hang getID(String id) {
-        String sql = "SELECT * FROM Sach WHERE maSach=?";
-        List<hang> list = getData(sql, id);
-        return list.get(0);
+    public String getID(String id) {
+        Cursor cursor = db.rawQuery("SELECT tenSp FROM hang WHERE maHang =?", new String[]{id});
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            String tenSp = cursor.getString(0);
+            cursor.close();
+            return tenSp;
+        }
+        cursor.close();
+        return "Không tìm thấy";
+    }
+    public int getIDmoney(int id) {
+        Cursor cursor = db.rawQuery("SELECT gia FROM hang WHERE maHang =?", new String[]{String.valueOf(id)});
+        int giaMua=-1;
+        if (cursor.moveToFirst()) {
+            giaMua= cursor.getInt(0);
+            cursor.close();
+        }
+        db.close();
+        return giaMua;
     }
 
     @SuppressLint("Range")
@@ -57,11 +73,10 @@ public class hangDao {
         if (cursor.getCount() != 0){
             while (cursor.moveToNext()) {
                 hang obj = new hang();
-                obj.setMaHang(Integer.parseInt(cursor.getString(cursor.getColumnIndex("maHang"))));
-                obj.setTenSp(cursor.getString(cursor.getColumnIndex("tenSp")));
-                obj.setMaNhaSx(Integer.parseInt(cursor.getString(cursor.getColumnIndex("maNhaSx"))));
-                obj.setGia(cursor.getString(cursor.getColumnIndex("gia")));
-
+                obj.setMaHang(cursor.getInt(0));
+                obj.setTenSp(cursor.getString(1));
+                obj.setMaNhaSx(cursor.getInt(2));
+                obj.setGia(cursor.getInt(3));
                 list.add(obj);
             }
         }

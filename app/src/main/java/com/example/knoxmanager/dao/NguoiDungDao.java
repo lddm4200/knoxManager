@@ -55,7 +55,17 @@ public class NguoiDungDao {
         String sql = "SELECT * FROM NGUOIDUNG WHERE phanQuyen = 0" ;
         return getData(sql);
     }
-
+    public String getIDTao(String id) {
+        Cursor cursor = db.rawQuery("SELECT hoTen FROM NGUOIDUNG WHERE maNguoiDung =?", new String[]{id});
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            String hoten = cursor.getString(0);
+            cursor.close();
+            return hoten;
+        }
+        cursor.close();
+        return "Không tìm thấy";
+    }
     public NguoiDung getID(String id) {
         String sql = "SELECT * FROM NGUOIDUNG WHERE maNguoiDung=?";
         List<NguoiDung> list = getData(sql, id);
