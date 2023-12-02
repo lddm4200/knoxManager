@@ -58,7 +58,7 @@ public class frmphieuTheoDoi extends Fragment {
         //
         recyclerView = view.findViewById(R.id.rcvPM);
         fltAdd = view.findViewById(R.id.fltAddPM);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         //
         phieuDAO = new PhieuDAO(getActivity());
         PhieuTheoDoi phieuTheoDoi = new PhieuTheoDoi();

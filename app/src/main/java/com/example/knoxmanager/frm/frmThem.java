@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.knoxmanager.R;
+import com.example.knoxmanager.activitymenu.DoiMatKhau;
 import com.example.knoxmanager.activitymenu.QLThngTinKhachHang;
 import com.example.knoxmanager.activitymenu.QLThongBao;
 import com.example.knoxmanager.activitymenu.QlTaiKhoan;
@@ -27,7 +28,7 @@ public class frmThem extends Fragment {
     public frmThem() {
         // Required empty public constructor
     }
-    private Button btnQlTTKh,btnDangXuat,btnQLNV,btnThongBao;
+    private Button btnQlTTKh,btnDangXuat,btnQLNV,btnThongBao,btnDoiMatKhau;
     TextView ndUser,ndcv;
     NguoiDungDao ndDao;
     @Override
@@ -42,7 +43,7 @@ public class frmThem extends Fragment {
         ndcv=view.findViewById(R.id.chucVu_frrmMenu);
         btnThongBao=view.findViewById(R.id.btnThongBao);
         btnQlTTKh=view.findViewById(R.id.btnQLTTKH);
-
+        btnDoiMatKhau=view.findViewById(R.id.btnDoiMatKhau);
         btnQlTTKh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,7 +72,12 @@ public class frmThem extends Fragment {
                     startActivity(new Intent(getActivity(), QlTaiKhoan.class));
             }
         });
-
+        btnDoiMatKhau.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), DoiMatKhau.class));
+            }
+        });
         btnThongBao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,7 +33,7 @@ public class QLThngTinKhachHang extends AppCompatActivity {
 
     private KhachHangDao khDAO;
     ArrayList<KhachHang> list = new ArrayList<>();
-    EditText edTen,edsdt,edGioiTinh,edDiaChi;
+    EditText edTen, edsdt, edGioiTinh, edDiaChi;
     TextView btnLuu;
 
     @Override
@@ -40,20 +41,26 @@ public class QLThngTinKhachHang extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qlthng_tin_khach_hang);
         rcvThanhVien = findViewById(R.id.Fragment_khachHang_RecycelView);
-        floatAddThanhVien =findViewById(R.id.Fragment_khachHang_FloatBTN);
+        floatAddThanhVien = findViewById(R.id.Fragment_khachHang_FloatBTN);
         khDAO = new KhachHangDao(this);
-
-        list.clear();
-        list.addAll(khDAO.getAll());
-        rcvThanhVien.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new KhachHangAdrapter(QLThngTinKhachHang.this, list);
-        rcvThanhVien.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
-
+        ImageButton btnBack = findViewById(R.id.ibtnBackkh);
+        loadData();
+//        list.clear();
+//        list.addAll(khDAO.getAll());
+//        rcvThanhVien.setLayoutManager(new LinearLayoutManager(this));
+//        adapter = new KhachHangAdrapter(QLThngTinKhachHang.this, list);
+//        rcvThanhVien.setAdapter(adapter);
+//        adapter.notifyDataSetChanged();
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         floatAddThanhVien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openDialog(QLThngTinKhachHang.this,1,list);
+                openDialog(QLThngTinKhachHang.this, 1, list);
                 list.clear();
                 list.addAll(khDAO.getAll());
                 rcvThanhVien.setLayoutManager(new LinearLayoutManager(QLThngTinKhachHang.this));
@@ -64,6 +71,7 @@ public class QLThngTinKhachHang extends AppCompatActivity {
         });
 
     }
+
     public void loadData() {
         list.clear();
         list.addAll(khDAO.getAll());
@@ -73,11 +81,11 @@ public class QLThngTinKhachHang extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
-    public void openDialog(Context context, int type, ArrayList<KhachHang> list){
+    public void openDialog(Context context, int type, ArrayList<KhachHang> list) {
 
-        LayoutInflater inflater = ((Activity)context).getLayoutInflater();
+        LayoutInflater inflater = ((Activity) context).getLayoutInflater();
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        View view = inflater.inflate(R.layout.dialog_khach_hang,null);
+        View view = inflater.inflate(R.layout.dialog_khach_hang, null);
         builder.setView(view); // gan view vao hop thoai
         Dialog dialog = builder.create();
         dialog.show();
@@ -99,15 +107,15 @@ public class QLThngTinKhachHang extends AppCompatActivity {
                 String pass = edGioiTinh.getText().toString();
                 String confirm = edDiaChi.getText().toString();
 
-                if ( hoten.trim().isEmpty() || sdt.trim().isEmpty() || pass.trim().isEmpty() || confirm.trim().isEmpty()) {
+                if (hoten.trim().isEmpty() || sdt.trim().isEmpty() || pass.trim().isEmpty() || confirm.trim().isEmpty()) {
                     Toast.makeText(context, "Không được để trống thông tin", Toast.LENGTH_SHORT).show();
-                } else if (!validateSDT(sdt) || sdt.length() < 10){
+                } else if (!validateSDT(sdt) || sdt.length() < 10) {
                     Toast.makeText(context, "Số điện thoại chưa đúng", Toast.LENGTH_SHORT).show();
                 } else {
-                    KhachHang tv = new KhachHang(type,hoten,sdt,pass,confirm);
+                    KhachHang tv = new KhachHang(type, hoten, sdt, pass, confirm);
                     tvDao.insert(tv);
                     Toast.makeText(context, "Them thành công", Toast.LENGTH_SHORT).show();
-                    if (type == 1){
+                    if (type == 1) {
                         list.clear();
                         list.addAll(tvDao.getAll());
                     }
@@ -117,7 +125,8 @@ public class QLThngTinKhachHang extends AppCompatActivity {
         });
 
     }
-    public boolean validateSDT(String sdt){
+
+    public boolean validateSDT(String sdt) {
         return sdt.matches("\\d++");
     }
 }
