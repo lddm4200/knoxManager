@@ -17,6 +17,7 @@ import com.example.knoxmanager.frm.frmhang;
 import com.example.knoxmanager.model.Hang;
 import com.example.knoxmanager.model.Hangx;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class hangAdrapter  extends ArrayAdapter<Hang> {
@@ -44,6 +45,8 @@ public class hangAdrapter  extends ArrayAdapter<Hang> {
         }
         final Hang item = list.get(position);
         if (item != null) {
+            DecimalFormat decimalFormat = new DecimalFormat("###,###");
+
             HangxDao hangxDao1 = new HangxDao(context);
             Hangx hangx1 = hangxDao1.getID(String.valueOf(item.getMaNhaSx()));
             tvMaHang = v.findViewById(R.id.txtHang);
@@ -56,7 +59,7 @@ public class hangAdrapter  extends ArrayAdapter<Hang> {
             tvNhaSx.setText("Hãng: " + hangx1.getTenNhasx());
 
             tvGia = v.findViewById(R.id.txtGia);
-            tvGia.setText("giá: "+item.getGia()+" VND");
+            tvGia.setText("giá: "+decimalFormat.format(item.getGia())+" VND");
 
             imgDel = v.findViewById(R.id.delete_hang);
         }

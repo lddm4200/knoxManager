@@ -31,6 +31,7 @@ import com.example.knoxmanager.model.KhachHang;
 import com.example.knoxmanager.model.NguoiDung;
 import com.example.knoxmanager.model.PhieuTheoDoi;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -62,6 +63,7 @@ public class PhieuMuonAdapter extends RecyclerView.Adapter<PhieuMuonAdapter.view
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
         PhieuTheoDoi phieuTheoDoi = list.get(position);
+        DecimalFormat decimalFormat = new DecimalFormat("###,###");
         holder.txtMaPhieu.setText("Mã phiếu: "+list.get(position).getMaPhieu());
         String tenNguoiTao = String.valueOf(nguoiDungDao.getIDTao(phieuTheoDoi.getMaNguoiDung()));
         holder.txtNguoiTao.setText("Người tạo: "+tenNguoiTao);
@@ -70,7 +72,7 @@ public class PhieuMuonAdapter extends RecyclerView.Adapter<PhieuMuonAdapter.view
         String tenSP = hangDao.getID(String.valueOf(phieuTheoDoi.getMaHang()));
         holder.txtTenSP.setText("Sản phẩm: "+tenSP);
         int gia = hangDao.getIDmoney(phieuTheoDoi.getMaHang());
-        holder.txtGiaMua.setText("Giá mua: "+gia+" VNĐ");
+        holder.txtGiaMua.setText("Giá mua: "+decimalFormat.format(gia)+" VNĐ");
         if(list.get(position).getTrangThai()==0){
             holder.txtTrangThai.setText("Đã giao");
             holder.txtTrangThai.setTextColor(Color.parseColor("#1ED300"));
@@ -85,7 +87,7 @@ public class PhieuMuonAdapter extends RecyclerView.Adapter<PhieuMuonAdapter.view
         }
         holder.txtNgayDat.setText("Ngày đặt: "+list.get(position).getNgayDat());
         holder.txtSoLuong.setText("Số lượng: "+list.get(position).getSoLuong());
-        holder.txtTongTien.setText("Tổng tiền: "+gia*list.get(position).getSoLuong()+" VNĐ");
+        holder.txtTongTien.setText("Tổng tiền: "+decimalFormat.format(gia*list.get(position).getSoLuong())+" VNĐ");
         holder.btnXoaPM.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

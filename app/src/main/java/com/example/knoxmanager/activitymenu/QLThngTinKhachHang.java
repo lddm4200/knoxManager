@@ -44,6 +44,7 @@ public class QLThngTinKhachHang extends AppCompatActivity {
         floatAddThanhVien = findViewById(R.id.Fragment_khachHang_FloatBTN);
         khDAO = new KhachHangDao(this);
         ImageButton btnBack = findViewById(R.id.ibtnBackkh);
+
         loadData();
 //        list.clear();
 //        list.addAll(khDAO.getAll());
