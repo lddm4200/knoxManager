@@ -143,6 +143,18 @@
             android:padding="20dp"
             android:text="Thông báo"
             android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnHoaDon"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/butum"
+            android:drawableStart="@drawable/thong_bao"
+            android:drawablePadding="20dp"
+            android:gravity="left"
+            android:padding="20dp"
+            android:text="Hóa Đơn"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btnDangXuat"

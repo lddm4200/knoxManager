@@ -6,9 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.knoxmanager.database.DbHelper;
+import com.example.knoxmanager.model.NguoiDung;
 import com.example.knoxmanager.model.PhieuTheoDoi;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PhieuDAO {
     private final DbHelper dbHelper;
@@ -72,4 +74,6 @@ public class PhieuDAO {
         sqLiteDatabase = dbHelper.getWritableDatabase();
         return sqLiteDatabase.delete("PHIEUTHEODOI", "maPhieu=?", new String[]{id});
     }
+
+
 }

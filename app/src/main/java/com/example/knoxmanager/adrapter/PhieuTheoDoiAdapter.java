@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,14 +27,12 @@ import com.example.knoxmanager.dao.NguoiDungDao;
 import com.example.knoxmanager.dao.PhieuDAO;
 import com.example.knoxmanager.model.Hang;
 import com.example.knoxmanager.model.KhachHang;
-import com.example.knoxmanager.model.NguoiDung;
 import com.example.knoxmanager.model.PhieuTheoDoi;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
-public class PhieuMuonAdapter extends RecyclerView.Adapter<PhieuMuonAdapter.viewHolder> {
+public class PhieuTheoDoiAdapter extends RecyclerView.Adapter<PhieuTheoDoiAdapter.viewHolder> {
     private final Context context;
     private final ArrayList<PhieuTheoDoi> list;
     PhieuDAO phieuDAO;
@@ -43,7 +40,7 @@ public class PhieuMuonAdapter extends RecyclerView.Adapter<PhieuMuonAdapter.view
     HangDao hangDao;
     NguoiDungDao nguoiDungDao;
 
-    public PhieuMuonAdapter(Context context, ArrayList<PhieuTheoDoi> list) {
+    public PhieuTheoDoiAdapter(Context context, ArrayList<PhieuTheoDoi> list) {
         this.context = context;
         this.list = list;
         phieuDAO = new PhieuDAO(context);
@@ -231,4 +228,6 @@ public class PhieuMuonAdapter extends RecyclerView.Adapter<PhieuMuonAdapter.view
             btnXoaPM = itemView.findViewById(R.id.btnXoaPM);
         }
     }
+
+
 }

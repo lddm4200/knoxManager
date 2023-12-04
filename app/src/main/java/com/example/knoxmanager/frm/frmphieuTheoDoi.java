@@ -20,7 +20,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.knoxmanager.R;
-import com.example.knoxmanager.adrapter.PhieuMuonAdapter;
+import com.example.knoxmanager.adrapter.PhieuTheoDoiAdapter;
 import com.example.knoxmanager.dao.HangDao;
 import com.example.knoxmanager.dao.KhachHangDao;
 import com.example.knoxmanager.dao.NguoiDungDao;
@@ -46,7 +46,7 @@ public class frmphieuTheoDoi extends Fragment {
     KhachHangDao khachHangDao;
     HangDao hangDao;
     NguoiDungDao nguoiDungDao;
-    PhieuMuonAdapter phieuMuonAdapter;
+    PhieuTheoDoiAdapter phieuMuonAdapter;
     FloatingActionButton fltAdd;
     RecyclerView recyclerView;
 
@@ -64,7 +64,7 @@ public class frmphieuTheoDoi extends Fragment {
         PhieuTheoDoi phieuTheoDoi = new PhieuTheoDoi();
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         list = phieuDAO.getAll();
-        phieuMuonAdapter = new PhieuMuonAdapter(getActivity(), list);
+        phieuMuonAdapter = new PhieuTheoDoiAdapter(getActivity(), list);
         recyclerView.setAdapter(phieuMuonAdapter);
         fltAdd.setOnClickListener(new View.OnClickListener() {
             @Override
