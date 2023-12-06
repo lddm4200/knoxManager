@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ import com.example.knoxmanager.model.Hangx;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class frmNhasx extends Fragment {
@@ -36,6 +38,7 @@ public class frmNhasx extends Fragment {
     Dialog dialog;
     EditText edMahang, edTenhang;
     TextView btnSave, btnCancel;
+    SearchView searchView;
     public frmNhasx() {
         // Required empty public constructor
     }
@@ -47,6 +50,7 @@ public class frmNhasx extends Fragment {
         View v = inflater.inflate(R.layout.fragment_hangx,container,false);
         lvLoaiSach = v.findViewById(R.id.Fragment_hangx_RecycelView);
         fab = v.findViewById(R.id.Fragment_LoaiSach_FloatBTN);
+        searchView = v.findViewById(R.id.Fragment_hangx_SearchView);
         dao = new HangxDao(getActivity());
 
         list = (ArrayList<Hangx>) dao.getAll();
@@ -69,8 +73,34 @@ public class frmNhasx extends Fragment {
             }
         });
 
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String s) {
+//                return true;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String s) {
+//                List<Hangx> hangxes = new ArrayList<>();
+//
+//                if (s.equals("")){
+//                    adapter.setList(list);
+//
+//                }else {
+//                    for(Hangx item: list){
+//                        if(item.getTenNhasx().toLowerCase().contains(s.toLowerCase())){
+//                            hangxes.add(item);
+//                        }
+//                    }
+//                    adapter.setList(hangxes);
+//                }
+//                return true;
+//            }
+//        });
+
         return v;
     }
+
 
     void capNhatLv() {
         list = (ArrayList<Hangx>) dao.getAll();

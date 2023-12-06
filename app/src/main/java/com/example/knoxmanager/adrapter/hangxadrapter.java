@@ -24,6 +24,10 @@ public class hangxadrapter extends ArrayAdapter<Hangx> {
     TextView tvMaNhaSx, tvTenNhaSx;
     ImageView imgDel;
     private List<Hangx> list = new ArrayList<>();
+    public void setList(List<Hangx> hangxes){
+        this.list = hangxes;
+        notifyDataSetChanged();
+    }
 
     public hangxadrapter(@NonNull Context context, frmNhasx fragment, ArrayList<Hangx> list) {
         super(context, 0,list);
